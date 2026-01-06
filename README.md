@@ -1,20 +1,111 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Rodrigo Lopes Portfolio
 
-# Run and deploy your AI Studio app
+Modern, responsive portfolio website for Rodrigo Lopes - Senior Product Manager specializing in AI Strategy, Data-Driven Innovation, and emerging technologies.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1rB7ECSJcSaVLq8QZok-vCC09UMOqGE1b
+- 🎨 Modern, bold design with dark mode support
+- 📱 Fully responsive (mobile-first)
+- ⚡ Built with React 19 + Vite 6
+- 🎯 SEO optimized with Open Graph tags
+- 📊 Interactive case studies with data visualizations
+- 📝 Blog/writings section
+- 🌐 CDN-based dependencies for fast loading
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js (v18 or higher recommended)
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist/` folder.
+
+To preview the production build locally:
+```bash
+npm run preview
+```
+
+## Deploy to Netlify
+
+### Option 1: Deploy via Netlify CLI
+
+1. Install Netlify CLI:
+   ```bash
+   npm install -g netlify-cli
+   ```
+
+2. Build and deploy:
+   ```bash
+   npm run build
+   netlify deploy --prod
+   ```
+
+### Option 2: Deploy via Git
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Connect your repository to Netlify
+3. Netlify will auto-detect the build settings from `netlify.toml`
+
+Build settings (already configured in `netlify.toml`):
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+
+## Project Structure
+
+```
+├── App.tsx              # Main application component
+├── index.tsx            # Application entry point
+├── types.ts             # TypeScript type definitions
+├── constants.ts         # Portfolio content data
+├── index.html           # HTML template
+├── vite.config.ts       # Vite configuration
+├── netlify.toml         # Netlify deployment config
+└── public/
+    └── _redirects       # SPA routing fallback
+```
+
+## Technology Stack
+
+- **Framework:** React 19.2.3
+- **Build Tool:** Vite 6.2.0
+- **Language:** TypeScript 5.8.2
+- **Styling:** Tailwind CSS (CDN)
+- **Charts:** Recharts 3.6.0
+- **Icons:** Lucide React 0.562.0
+
+## Configuration
+
+### Customizing Content
+
+All portfolio content is located in `constants.ts`:
+- `HERO_DATA` - Personal info, tagline, contact details
+- `EXPERIENCE` - Work experience timeline
+- `CASE_STUDIES` - Project case studies
+- `BLOG_POSTS` - Writing/blog posts
+
+### Customizing Styles
+
+The design uses a custom color palette defined in `index.html`:
+- Yellow: `#FFFF00`
+- Cyan: `#00CCFF`
+- Blue: `#4466FF`
+
+## License
+
+© 2026 Rodrigo Lopes. All rights reserved.
