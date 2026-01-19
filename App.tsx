@@ -1134,13 +1134,13 @@ const App = () => {
   const [activePost, setActivePost] = useState<BlogPost | null>(null);
   const [view, setView] = useState<'home' | 'archive'>('home');
   const [darkMode, setDarkMode] = useState(() => {
-    // Check localStorage first, then system preference
+    // Check localStorage first, then default to light mode
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('darkMode');
       if (saved !== null) {
         return JSON.parse(saved);
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return false; // Default to Light Mode
     }
     return false;
   });
