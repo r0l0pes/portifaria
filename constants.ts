@@ -279,7 +279,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: "cs1",
     category: "Humanitarian Tech Aid - AI Validation & Adoption",
-    title: "Launching a Generative AI Voice Agent for 5,000 Farmers in Tanzania",
+    title: "Launching a Generative AI Voice Agent for Farmers in Tanzania",
     subtitle: "World Food Programme - Generative AI Voice Agent",
     role: "Senior Product Manager",
     summary: "Partnered with Viamo to validate whether generative AI could deliver agricultural advice to smallholder farmers facing extreme constraints: limited smartphone literacy, unreliable connectivity, and languages underrepresented in commercial AI training data. Engaged 5,000 farmers across a 6-month growing season, demonstrating 60% cost efficiency potential vs. traditional extension worker models and informing WFP's AI investment strategy across 20+ country programs.",
@@ -415,7 +415,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: "cs5",
     category: "Conversational Commerce - Emerging Tech Strategy",
-    title: "Product Foundations for WhatsApp Commerce (R$1.17B Scale)",
+    title: "Building Brazil'S First WhatsApp Commerce Platform At Scale",
     subtitle: "C&A Brasil - WhatsApp Business Strategy",
     role: "Senior Product Manager (Supporting)",
     summary: "As Senior PM, supported the preparation for C&A's WhatsApp Business pilot (launched H1 2020). While Sales/Commercial owned revenue execution, I established the product foundations: technical feasibility assessment (VTEX integration), metrics framework (conversation-to-conversion, associate efficiency), and associate workflow design. This foundation enabled the channel to scale to R$1.17B GMV by 2022 (>50% of digital sales), validating the human-led conversational commerce model in Brazil.",

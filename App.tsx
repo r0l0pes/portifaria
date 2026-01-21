@@ -323,7 +323,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
         </h1>
 
         <p className={`text-lg md:text-2xl text-[#4466FF] dark:text-slate-400 max-w-3xl leading-relaxed font-medium mx-auto md:mx-0 transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          Senior Product Manager with 9+ years in e-commerce growth, B2B platforms, and international expansion.
+          Senior Product Manager with 8+ years in e-commerce growth, B2B platforms, and international expansion.
         </p>
 
         <div className={`flex items-center justify-center md:justify-start transition-all duration-700 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -419,7 +419,7 @@ const AboutContent = () => {
           <div>
             <h3 className="text-xl font-black text-black dark:text-white uppercase mb-2">background</h3>
             <p>
-              I'm a (currently) Berlin-based Senior Product Manager. Most recently at the World Food Programme in Munich, working on generative AI voice technology and contributing to organizational AI governance. Before that, FORVIA HELLA, unifying product catalogs from two recently merged automotive companies into a single online experience for workshop customers. Earlier, Accenture Brasil, embedded with Natura to scale their e-commerce platform across four Latin American countries. Started at C&A Brasil, working on mobile shopping and early WhatsApp commerce integration.
+              I'm a Senior Product Manager, currently based in Berlin. Most recently at the World Food Programme in Munich, working on generative AI voice technology and contributing to organizational AI governance. Before that, FORVIA HELLA, unifying product catalogs from two recently merged automotive companies into a single online experience for workshop customers. Earlier, Accenture Brasil, embedded with Natura to scale their e-commerce platform across four Latin American countries. Started at C&A Brasil, working on mobile shopping and early WhatsApp commerce integration.
             </p>
             <p className="mt-2">
               I got into product through a digital agency I founded in São Paulo while finishing university. Started building solutions for SMBs, realized the work I enjoyed most was understanding what to build and why, and transitioned into product management. That was 2018.
@@ -632,7 +632,7 @@ const CaseStudyCard: React.FC<{ study: CaseStudy; onClick: () => void }> = ({ st
       </div>
 
       <h3 className="text-xl md:text-2xl font-black text-[#00CCFF] mb-3 group-hover:text-black dark:group-hover:text-white transition-colors uppercase leading-tight transform translate-z-10">{study.title}</h3>
-      <p className="text-[#4466FF] dark:text-slate-400 mb-8 line-clamp-3 text-sm leading-relaxed">{study.summary}</p>
+      {/* Subtitle removed as requested */}
 
       <div className="flex items-end justify-between mt-auto">
         <div>
@@ -780,7 +780,7 @@ const CaseStudyModal = ({ study, onClose, onNext, onPrev }: { study: CaseStudy; 
                             itemStyle={{ color: '#4466FF', fontWeight: 'bold' }}
                             cursor={{ fill: '#333333' }}
                           />
-                          <Bar dataKey="value">
+                          <Bar dataKey="value" animationDuration={1500} animationEasing="ease-out">
                             {study.keyMetric.chartData.map((entry, index) => (
                               <Cell key={`cell-${index}`} fill={index === 1 ? '#00CCFF' : '#444'} />
                             ))}
@@ -899,9 +899,7 @@ const BlogContent = ({ onReadPost, onViewArchive }: { onReadPost: (post: BlogPos
             <p className="text-[#4466FF] dark:text-gray-400 text-sm md:text-base font-medium max-w-md">
               Thinking out loud about product strategy, emerging tech, and lessons learned.
             </p>
-            <p className="text-black/40 dark:text-white/40 text-xs font-bold mt-2">
-              {BLOG_POSTS.length} articles · {totalReadTime} min total read time
-            </p>
+            {/* Metadata (article count) removed as requested */}
           </div>
           <button onClick={onViewArchive} className="hidden md:flex items-center gap-2 px-5 py-3 bg-black text-white dark:bg-white dark:text-black font-bold uppercase tracking-widest text-xs hover:bg-[#00CCFF] hover:text-black transition-all rounded-sm shadow-[4px_4px_0px_0px_#FFFF00] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
             View All Writings <ArrowRight size={16} />
@@ -1114,7 +1112,7 @@ const FooterContent = () => (
       <div className="text-left order-2 md:order-1">
         <h2 className="text-4xl md:text-7xl font-black text-[#00CCFF] uppercase mb-6 md:mb-8 leading-none">Let's Talk</h2>
         <p className="text-[#4466FF] dark:text-gray-400 mb-6 md:mb-8 text-lg md:text-xl font-medium max-w-md">
-          Currently based in {HERO_DATA.contact.location} and open to new opportunities.
+          I'm open to new opportunities.
         </p>
 
         {/* Direct Email */}
