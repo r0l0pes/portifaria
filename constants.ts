@@ -411,5 +411,39 @@ export const CASE_STUDIES: CaseStudy[] = [
       { title: "Mobile-First Prioritization in Emerging Markets", description: "With 80% mobile traffic, desktop optimization would have been wasted effort. Accepted temporary desktop conversion dip for larger mobile gains, knowing the traffic distribution justified the trade-off." },
       { title: "Stakeholder Negotiation Protects Long-Term Wins", description: "Pushed back on marketing's request for email capture at cart stage (would have increased abandonment). Negotiated post-purchase email capture instead, protecting conversion funnel while still meeting marketing's lead generation needs." }
     ]
+  },
+  {
+    id: "cs5",
+    category: "Conversational Commerce - Emerging Tech Strategy",
+    title: "Product Foundations for WhatsApp Commerce (R$1.17B Scale)",
+    subtitle: "C&A Brasil - WhatsApp Business Strategy",
+    role: "Senior Product Manager (Supporting)",
+    summary: "As Senior PM, supported the preparation for C&A's WhatsApp Business pilot (launched H1 2020). While Sales/Commercial owned revenue execution, I established the product foundations: technical feasibility assessment (VTEX integration), metrics framework (conversation-to-conversion, associate efficiency), and associate workflow design. This foundation enabled the channel to scale to R$1.17B GMV by 2022 (>50% of digital sales), validating the human-led conversational commerce model in Brazil.",
+    challenge: "In late 2019, WhatsApp was Brazil's dominant app, but no fashion retailer had scaled it as a sales channel. The Sales team wanted a feature-rich launch (AI chatbots, personalization) immediately, but the e-commerce platform (VTEX) lacked native integration. The challenge was defining a technically feasible MVP that could launch quickly to validate the hypothesis (human-led sales) without getting bogged down in unproven AI complexity.",
+    approach: [
+      { title: "MVP Scope Definition", description: "Advocated for a 'human-first, tech-light' MVP. Instead of building complex chatbots, we focused on enabling 800+ associates with basic tools: inventory lookup, link generation, and order attribution. This allowed for faster launch." },
+      { title: "Metrics Framework Design", description: "Defined success beyond just revenue: 'Conversation-to-Conversion' for sales quality, 'Response Time' for customer experience, and 'Orders per Associate' for operational efficiency. This balanced commercial goals with operational reality." },
+      { title: "Technical Feasibility Assessment", description: "Mapped the gap between Sales ambitions and VTEX API capabilities. Created the integration specs for real-time inventory sync to prevent associates from selling out-of-stock items, a critical failure mode in manual sales." },
+      { title: "Workflow Standardization", description: "Designed the standard operating procedure for associates: how to greet, how to share product cards, and when to transition to checkout. This ensured consistent brand voice across hundreds of decentralized store employees." }
+    ],
+    outcomes: [
+      { title: "Scale Validation", description: "Channel grew to R$1.17B GMV by 2022 (Source: C&A 4Q22 Earnings), validating the strategic bet on WhatsApp." },
+      { title: "Digital Dominance", description: "Accounted for >50% of all digital sales in Q1 2022, proving that conversational commerce could outperform traditional web e-commerce in Brazil." },
+      { title: "Unit Economics", description: "Achieved 2x Average Order Value (AOV) compared to physical stores, as personalized advice drove bigger baskets." },
+      { title: "Strategic Foresight", description: "Validated the 'human-in-the-loop' model years before competitors, giving C&A a significant operational advantage during the 2020-2021 digital shift." }
+    ],
+    keyMetric: {
+      label: "Channel Scale (2022)",
+      value: "R$1.17B",
+      description: "GMV via WhatsApp Channel",
+      chartData: [
+        { name: '2019', value: 0 },
+        { name: '2022', value: 1.17 },
+      ]
+    },
+    lessons: [
+      { title: "Enablement vs. Ownership", description: "I supported this initiative without owning the P&L. It taught me the importance of setting strong technical foundations for commercial teams to build upon. The product contribution wasn't the sale itself, but making the sale scalable." },
+      { title: "Timing is Strategic", description: "Launching the pilot prep in late 2019 seemed early, but it meant C&A was ready when the market shifted in 2020. Strategic foresight in product often looks like 'too early' until it's suddenly 'just in time'." }
+    ]
   }
 ];

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Menu, X, ArrowRight, Download, Linkedin, Mail, ChevronRight, BarChart3, Database, Brain, Globe, ShieldCheck, Calendar, Clock, ArrowLeft, Sun, Moon, Github, Sparkles, ChevronDown, MapPin } from 'lucide-react';
+import { Menu, X, ArrowRight, Download, Linkedin, Mail, ChevronRight, BarChart3, Database, Brain, Globe, ShieldCheck, Calendar, Clock, ArrowLeft, Sun, Moon, Github, Sparkles, ChevronDown, MapPin, ChevronLeft } from 'lucide-react';
 import { CASE_STUDIES, EXPERIENCE, HERO_DATA, BLOG_POSTS } from './constants';
 import { CaseStudy, BlogPost } from './types';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { ScrollProgress } from './src/components/ui/ScrollProgress';
 import { AnimatedText, CountUp } from './src/components/animations/AnimatedText';
 import { PageTransition } from './src/components/animations/PageTransition';
@@ -323,7 +323,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
         </h1>
 
         <p className={`text-lg md:text-2xl text-[#4466FF] dark:text-slate-400 max-w-3xl leading-relaxed font-medium mx-auto md:mx-0 transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          Senior Product Manager specializing in AI products, e-commerce growth, and international expansion. 7+ years turning ambiguous problems into measurable business outcomes.
+          Senior Product Manager with 9+ years in e-commerce growth, B2B platforms, and international expansion.
         </p>
 
         <div className={`flex items-center justify-center md:justify-start transition-all duration-700 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -374,7 +374,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
             <BarChart3 size={14} /> Data-Driven
           </div>
           <div className="flex items-center gap-2 bg-black/5 dark:bg-white/5 px-3 py-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">
-            <Brain size={14} /> AI Strategy
+            <Brain size={14} /> Product Strategy
           </div>
           <div className="flex items-center gap-2 bg-black/5 dark:bg-white/5 px-3 py-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">
             <Globe size={14} /> Global Scale
@@ -389,9 +389,9 @@ const AboutContent = () => {
   const [toolsExpanded, setToolsExpanded] = useState(false);
   const [skillsExpanded, setSkillsExpanded] = useState(false);
 
-  const coreSkills = ['Product Discovery', 'A/B Testing', 'AI/ML Products', 'E-Commerce', 'International Expansion', 'B2B Platforms', 'Stakeholder Management', 'Data-Driven Prioritization'];
-  const tools = ['Jira', 'Figma', 'GA4/Amplitude', 'SQL', 'Hotjar', 'Confluence', 'Miro', 'Notion'];
-  const methodologies = ['Continuous Discovery', 'Jobs-to-be-Done', 'OKRs', 'Lean Experimentation', 'Design Sprints', 'Agile/Scrum'];
+  const coreSkills = ['Product Discovery', 'A/B Testing', 'AI/ML Products', 'Roadmap Prioritization', 'Post-Merger Integration', 'International Expansion', 'B2B Platforms', 'Stakeholder Management', 'AI Governance', 'APIs', 'Data Platforms', 'Mobile', 'Cloud'];
+  const tools = ['Jira', 'Figma', 'GA4/Amplitude', 'SQL', 'Confluence', 'Miro', 'Notion', 'Linear', 'Productboard', 'Mixpanel', 'Power BI/Tableau', 'Retool', 'Zapier', 'ChatGPT/Claude', 'Claude Code', 'Antigravity', 'Cursor', 'LangChain'];
+  const methodologies = ['Continuous Discovery', 'Jobs-to-be-Done', 'OKRs', 'Experimentation', 'Design Sprints', 'Agile/Scrum'];
 
   return (
     <div className="py-8 md:py-12">
@@ -404,13 +404,34 @@ const AboutContent = () => {
 
       <div className="max-w-4xl space-y-8">
         {/* Flowing paragraph */}
-        <div className="text-base md:text-lg text-black/80 dark:text-white/80 leading-relaxed space-y-4">
-          <p>
-            Rodrigo Lopes is a Senior Product Manager based in Berlin with 7+ years of experience turning ambiguous problems into measurable outcomes across e-commerce, humanitarian tech, and automotive B2B. He specializes in validating products in high-uncertainty environments: launching AI voice agents for low-literacy farmers in Tanzania, scaling checkout platforms across 4 Latin American markets, and integrating B2B catalogs post-merger for 60,000+ customers.
-          </p>
-          <p>
-            His approach combines rigorous experimentation (15+ A/B tests per project), cross-functional coordination without direct authority, and a bias for shipping over perfecting. He translates technical complexity into business outcomes that stakeholders can act on.
-          </p>
+        {/* Flowing paragraph */}
+        <div className="text-base md:text-lg text-black/80 dark:text-white/80 leading-relaxed space-y-6">
+          <div>
+            <h3 className="text-xl font-black text-black dark:text-white uppercase mb-2">what i do</h3>
+            <p>
+              I build products in environments where the path forward isn't clear. My focus is on data-driven experimentation, cross-functional coordination, and turning ambiguous problems into outcomes people can act on.
+            </p>
+            <p className="mt-2">
+              The work tends to happen in complex situations: AI for vulnerable populations, post-merger B2B integration, multi-country platform expansions. Places where conventional playbooks break down and you need to figure it out as you go.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-black text-black dark:text-white uppercase mb-2">background</h3>
+            <p>
+              I'm a (currently) Berlin-based Senior Product Manager. Most recently at the World Food Programme in Munich, working on generative AI voice technology and contributing to organizational AI governance. Before that, FORVIA HELLA, unifying product catalogs from two recently merged automotive companies into a single online experience for workshop customers. Earlier, Accenture Brasil, embedded with Natura to scale their e-commerce platform across four Latin American countries. Started at C&A Brasil, working on mobile shopping and early WhatsApp commerce integration.
+            </p>
+            <p className="mt-2">
+              I got into product through a digital agency I founded in São Paulo while finishing university. Started building solutions for SMBs, realized the work I enjoyed most was understanding what to build and why, and transitioned into product management. That was 2018.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-black text-black dark:text-white uppercase mb-2">beyond work</h3>
+            <p>
+              When I'm not working, you'll find me swimming, hiking, or reading. Feel free to reach out, let's connect.
+            </p>
+          </div>
         </div>
 
         {/* Download Resume Button */}
@@ -454,7 +475,7 @@ const AboutContent = () => {
               {coreSkills.map((skill) => (
                 <motion.span
                   key={skill}
-                  className="px-3 py-1 bg-black/5 dark:bg-white/10 text-black dark:text-white text-sm font-bold rounded-full cursor-default"
+                  className="px-2 py-1 bg-black/5 dark:bg-white/10 text-black dark:text-white text-xs font-medium rounded cursor-default"
                   whileHover={{
                     scale: 1.1,
                     rotate: [-1, 1, -1, 0],
@@ -635,8 +656,14 @@ const CaseStudyCard: React.FC<{ study: CaseStudy; onClick: () => void }> = ({ st
   );
 };
 
-const CaseStudyModal = ({ study, onClose }: { study: CaseStudy; onClose: () => void }) => {
+const CaseStudyModal = ({ study, onClose, onNext, onPrev }: { study: CaseStudy; onClose: () => void; onNext?: () => void; onPrev?: () => void }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll({ container: contentRef });
+
+  const headerOpacity = useTransform(scrollY, [0, 150], [1, 0]);
+  const headerScale = useTransform(scrollY, [0, 150], [1, 0.95]);
+  const headerY = useTransform(scrollY, [0, 150], [0, -10]);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -657,114 +684,135 @@ const CaseStudyModal = ({ study, onClose }: { study: CaseStudy; onClose: () => v
     >
       <div className={`bg-white dark:bg-[#162032] w-full max-w-6xl border-2 border-black dark:border-[#333] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_#00CCFF] relative flex flex-col max-h-[95vh] md:max-h-[90vh] h-full md:h-auto rounded-t-3xl md:rounded-3xl overflow-hidden transition-all duration-300 ease-out ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'}`}>
 
-        {/* Header */}
-        <div className="sticky top-0 bg-white dark:bg-[#162032] z-10 p-6 md:p-10 border-b-2 border-black dark:border-[#333] flex justify-between items-start">
-          <div className="pr-8">
-            <div className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3 bg-[#FFFF00] inline-block px-2 py-1 rounded-sm">{study.category}</div>
-            <h2 className="text-2xl md:text-5xl font-black text-[#00CCFF] uppercase mb-2 leading-tight">{study.title}</h2>
-            <p className="text-[#4466FF] dark:text-gray-300 text-sm md:text-lg font-medium">{study.subtitle}</p>
+        {/* Floating Navigation Buttons */}
+        <div className="absolute top-0 right-0 z-20 p-6 md:p-10 flex gap-2 pointer-events-none">
+          <div className="flex gap-2 pointer-events-auto">
+            {onPrev && (
+              <button onClick={(e) => { e.stopPropagation(); onPrev(); }} className="p-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#00CCFF] hover:text-black transition-colors shrink-0 rounded-full active:scale-90 shadow-md">
+                <ChevronLeft size={20} />
+              </button>
+            )}
+            {onNext && (
+              <button onClick={(e) => { e.stopPropagation(); onNext(); }} className="p-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#00CCFF] hover:text-black transition-colors shrink-0 rounded-full active:scale-90 shadow-md">
+                <ChevronRight size={20} />
+              </button>
+            )}
+            <button onClick={onClose} className="p-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#00CCFF] hover:text-black transition-colors shrink-0 rounded-full active:scale-90 shadow-md">
+              <X size={20} />
+            </button>
           </div>
-          <button onClick={handleClose} className="p-2 bg-black dark:bg-white text-white dark:text-black hover:bg-[#00CCFF] hover:text-black transition-colors shrink-0 rounded-full active:scale-90">
-            <X size={20} />
-          </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-12 overflow-y-auto custom-scrollbar bg-white dark:bg-[#162032]">
-          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
-
-            {/* Main Content */}
-            <div className="md:col-span-2 space-y-10 md:space-y-12">
-
-              <section>
-                <h3 className="text-xl md:text-2xl font-black text-black dark:text-white uppercase mb-4 md:mb-6 flex items-center gap-3">
-                  <span className="w-4 h-4 bg-[#4466FF] dark:bg-slate-500 rounded-sm"></span> Challenge
-                </h3>
-                <p className="text-[#4466FF] dark:text-gray-300 leading-relaxed text-base md:text-lg">{study.challenge}</p>
-              </section>
-
-              <section>
-                <h3 className="text-xl md:text-2xl font-black text-black dark:text-white uppercase mb-4 md:mb-6 flex items-center gap-3">
-                  <span className="w-4 h-4 bg-[#00CCFF] rounded-sm"></span> Approach
-                </h3>
-                <div className="space-y-4 md:space-y-6">
-                  {study.approach.map((item, idx) => (
-                    <div key={idx} className="bg-[#FFFF00]/10 dark:bg-[#00CCFF]/10 p-4 md:p-6 border-l-4 border-[#00CCFF] rounded-r-lg">
-                      <h4 className="text-base md:text-lg font-bold text-black dark:text-white uppercase mb-2">{item.title}</h4>
-                      <p className="text-[#4466FF] dark:text-gray-300 text-sm md:text-base">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <h3 className="text-xl md:text-2xl font-black text-black dark:text-white uppercase mb-4 md:mb-6 flex items-center gap-3">
-                  <span className="w-4 h-4 bg-[#FFFF00] border border-black dark:border-white rounded-sm"></span> Outcomes
-                </h3>
-                <div className="grid gap-4">
-                  {study.outcomes.map((item, idx) => (
-                    <div key={idx} className="flex gap-4 items-start">
-                      <div className="mt-2 w-2 h-2 bg-black dark:bg-white shrink-0 rounded-full"></div>
-                      <div>
-                        <h4 className="font-bold text-black dark:text-white text-sm md:text-base">{item.title}</h4>
-                        <p className="text-[#4466FF] dark:text-gray-300 text-xs md:text-sm">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
+        <div ref={contentRef} className="overflow-y-auto custom-scrollbar bg-white dark:bg-[#162032] flex flex-col h-full">
+          {/* Scrollable Header */}
+          <motion.div
+            className="p-6 md:p-10 border-b-2 border-black dark:border-[#333] mb-10 md:mb-12"
+            style={{ opacity: headerOpacity, scale: headerScale, y: headerY, originX: 0, originY: 0 }}
+          >
+            <div className="pr-32 md:pr-40"> {/* Padding to clear floating buttons */}
+              <div className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3 bg-[#FFFF00] inline-block px-2 py-1 rounded-sm">{study.category}</div>
+              <h2 className="text-2xl md:text-5xl font-black text-[#00CCFF] uppercase mb-2 leading-tight">{study.title}</h2>
+              <p className="text-[#4466FF] dark:text-gray-300 text-sm md:text-lg font-medium">{study.subtitle}</p>
             </div>
+          </motion.div>
 
-            {/* Sidebar / Metrics */}
-            <div className="space-y-8 md:space-y-10">
-              <div className="bg-black dark:bg-[#0B1120] p-6 md:p-8 text-white shadow-[8px_8px_0px_0px_#00CCFF] dark:shadow-[8px_8px_0px_0px_#FFFF00] rounded-xl">
-                <h4 className="text-xs font-bold text-[#FFFF00] uppercase tracking-widest mb-4">Key Metric</h4>
-                <div className="text-5xl md:text-6xl font-black text-white mb-2">{study.keyMetric.value}</div>
-                <div className="text-white/80 mb-6 md:mb-8 font-medium text-sm md:text-base">{study.keyMetric.description}</div>
+          <div className="px-6 md:px-12 pb-12">
+            <div className="grid md:grid-cols-3 gap-10 md:gap-16">
 
-                {study.keyMetric.chartData && (
-                  <div className="h-32 md:h-40 w-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={study.keyMetric.chartData}>
-                        <XAxis dataKey="name" tick={{ fill: '#FFFFFF', fontSize: 10, fontWeight: 700 }} axisLine={false} tickLine={false} />
-                        <Tooltip
-                          contentStyle={{ backgroundColor: '#FFFFFF', borderColor: '#000000', color: '#000000' }}
-                          itemStyle={{ color: '#4466FF', fontWeight: 'bold' }}
-                          cursor={{ fill: '#333333' }}
-                        />
-                        <Bar dataKey="value">
-                          {study.keyMetric.chartData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={index === 1 ? '#00CCFF' : '#444'} />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
+              {/* Main Content */}
+              <div className="md:col-span-2 space-y-10 md:space-y-12">
+
+                <section>
+                  <h3 className="text-xl md:text-2xl font-black text-black dark:text-white uppercase mb-4 md:mb-6 flex items-center gap-3">
+                    <span className="w-4 h-4 bg-[#4466FF] dark:bg-slate-500 rounded-sm"></span> Challenge
+                  </h3>
+                  <p className="text-[#4466FF] dark:text-gray-300 leading-relaxed text-base md:text-lg">{study.challenge}</p>
+                </section>
+
+                <section>
+                  <h3 className="text-xl md:text-2xl font-black text-black dark:text-white uppercase mb-4 md:mb-6 flex items-center gap-3">
+                    <span className="w-4 h-4 bg-[#00CCFF] rounded-sm"></span> Approach
+                  </h3>
+                  <div className="space-y-4 md:space-y-6">
+                    {study.approach.map((item, idx) => (
+                      <div key={idx} className="bg-[#FFFF00]/10 dark:bg-[#00CCFF]/10 p-4 md:p-6 border-l-4 border-[#00CCFF] rounded-r-lg">
+                        <h4 className="text-base md:text-lg font-bold text-black dark:text-white uppercase mb-2">{item.title}</h4>
+                        <p className="text-[#4466FF] dark:text-gray-300 text-sm md:text-base">{item.description}</p>
+                      </div>
+                    ))}
                   </div>
-                )}
+                </section>
+
+                <section>
+                  <h3 className="text-xl md:text-2xl font-black text-black dark:text-white uppercase mb-4 md:mb-6 flex items-center gap-3">
+                    <span className="w-4 h-4 bg-[#FFFF00] border border-black dark:border-white rounded-sm"></span> Outcomes
+                  </h3>
+                  <div className="grid gap-4">
+                    {study.outcomes.map((item, idx) => (
+                      <div key={idx} className="flex gap-4 items-start">
+                        <div className="mt-2 w-2 h-2 bg-black dark:bg-white shrink-0 rounded-full"></div>
+                        <div>
+                          <h4 className="font-bold text-black dark:text-white text-sm md:text-base">{item.title}</h4>
+                          <p className="text-[#4466FF] dark:text-gray-300 text-xs md:text-sm">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
               </div>
 
-              <div className="bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-6 md:p-8 rounded-xl">
-                <h4 className="text-xs font-bold text-black dark:text-white uppercase tracking-widest mb-4 md:mb-6 border-b border-black dark:border-white/10 pb-2">Lessons Learned</h4>
-                <ul className="space-y-4">
-                  {study.lessons.map((lesson, idx) => (
-                    <li key={idx} className="text-sm">
-                      <span className="block font-bold text-[#00CCFF] uppercase mb-1">{lesson.title}</span>
-                      <span className="text-[#4466FF] dark:text-gray-300">{lesson.description}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Sidebar / Metrics */}
+              <div className="space-y-8 md:space-y-10">
+                <div className="bg-black dark:bg-[#0B1120] p-6 md:p-8 text-white shadow-[8px_8px_0px_0px_#00CCFF] dark:shadow-[8px_8px_0px_0px_#FFFF00] rounded-xl">
+                  <h4 className="text-xs font-bold text-[#FFFF00] uppercase tracking-widest mb-4">Key Metric</h4>
+                  <div className="text-5xl md:text-6xl font-black text-white mb-2">{study.keyMetric.value}</div>
+                  <div className="text-white/80 mb-6 md:mb-8 font-medium text-sm md:text-base">{study.keyMetric.description}</div>
 
-              <div className="pt-6 border-t-2 border-black/10 dark:border-white/10">
-                <div className="text-xs font-bold text-black/50 dark:text-white/50 uppercase tracking-widest mb-1">Role</div>
-                <div className="font-bold text-black dark:text-white text-base md:text-lg">{study.role}</div>
-              </div>
+                  {study.keyMetric.chartData && (
+                    <div className="h-32 md:h-40 w-full">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={study.keyMetric.chartData}>
+                          <XAxis dataKey="name" tick={{ fill: '#FFFFFF', fontSize: 10, fontWeight: 700 }} axisLine={false} tickLine={false} />
+                          <Tooltip
+                            contentStyle={{ backgroundColor: '#FFFFFF', borderColor: '#000000', color: '#000000' }}
+                            itemStyle={{ color: '#4466FF', fontWeight: 'bold' }}
+                            cursor={{ fill: '#333333' }}
+                          />
+                          <Bar dataKey="value">
+                            {study.keyMetric.chartData.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={index === 1 ? '#00CCFF' : '#444'} />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )}
+                </div>
 
+                <div className="bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-6 md:p-8 rounded-xl">
+                  <h4 className="text-xs font-bold text-black dark:text-white uppercase tracking-widest mb-4 md:mb-6 border-b border-black dark:border-white/10 pb-2">Lessons Learned</h4>
+                  <ul className="space-y-4">
+                    {study.lessons.map((lesson, idx) => (
+                      <li key={idx} className="text-sm">
+                        <span className="block font-bold text-[#00CCFF] uppercase mb-1">{lesson.title}</span>
+                        <span className="text-[#4466FF] dark:text-gray-300">{lesson.description}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 border-t-2 border-black/10 dark:border-white/10">
+                  <div className="text-xs font-bold text-black/50 dark:text-white/50 uppercase tracking-widest mb-1">Role</div>
+                  <div className="font-bold text-black dark:text-white text-base md:text-lg">{study.role}</div>
+                </div>
+
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   );
@@ -866,9 +914,7 @@ const BlogContent = ({ onReadPost, onViewArchive }: { onReadPost: (post: BlogPos
           className="group bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-8 md:p-12 cursor-pointer transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#4466FF] dark:hover:shadow-[12px_12px_0px_0px_#FFFF00] rounded-xl mb-6 md:mb-8 relative overflow-hidden"
         >
           <div className="absolute top-4 right-4 md:top-6 md:right-6">
-            <span className="px-3 py-1 bg-[#FFFF00] text-black text-xs font-black uppercase rounded-full">
-              Featured
-            </span>
+            {/* Featured badge removed as requested */}
           </div>
           <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
             {featuredPost.tags.map((tag) => (
@@ -903,13 +949,6 @@ const BlogContent = ({ onReadPost, onViewArchive }: { onReadPost: (post: BlogPos
               onClick={() => onReadPost(post)}
               className="group bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-6 md:p-8 cursor-pointer transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#4466FF] dark:hover:shadow-[8px_8px_0px_0px_#FFFF00] rounded-xl relative"
             >
-              {index === 0 && (
-                <div className="absolute top-4 right-4">
-                  <span className="px-2 py-1 bg-[#00CCFF]/10 text-[#00CCFF] text-xs font-bold uppercase rounded">
-                    Latest
-                  </span>
-                </div>
-              )}
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.slice(0, 2).map((tag) => (
                   <span key={tag} className="px-2 py-1 bg-black/5 dark:bg-white/10 text-black/60 dark:text-white/60 text-xs font-medium rounded">
@@ -1050,7 +1089,7 @@ const WorkSection = ({ onStudyClick }: { onStudyClick: (study: CaseStudy) => voi
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         {CASE_STUDIES.map((study, index) => (
           <div
             key={study.id}
@@ -1221,6 +1260,18 @@ const App = () => {
         <CaseStudyModal
           study={activeStudy}
           onClose={() => setActiveStudy(null)}
+          onNext={() => {
+            const currentIndex = CASE_STUDIES.findIndex(s => s.id === activeStudy.id);
+            if (currentIndex < CASE_STUDIES.length - 1) {
+              setActiveStudy(CASE_STUDIES[currentIndex + 1]);
+            }
+          }}
+          onPrev={() => {
+            const currentIndex = CASE_STUDIES.findIndex(s => s.id === activeStudy.id);
+            if (currentIndex > 0) {
+              setActiveStudy(CASE_STUDIES[currentIndex - 1]);
+            }
+          }}
         />
       )}
 
