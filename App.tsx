@@ -8,6 +8,7 @@ import { ScrollProgress } from './src/components/ui/ScrollProgress';
 import { AnimatedText, CountUp } from './src/components/animations/AnimatedText';
 import { PageTransition } from './src/components/animations/PageTransition';
 import { TiltCard } from './src/components/animations/TiltCard';
+import { Analytics, logEvent } from './src/components/Analytics';
 
 // --- Animation Hook ---
 const useInView = (options = {}) => {
@@ -440,6 +441,7 @@ const AboutContent = () => {
             href="/Resume_Rodrigo-Lopes.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white dark:bg-white dark:text-black font-bold uppercase tracking-widest text-sm rounded-sm shadow-[4px_4px_0px_0px_#FFFF00]"
+            onClick={() => logEvent('Engagement', 'Download Resume')}
             whileHover={{
               backgroundColor: '#00CCFF',
               color: '#000000',
@@ -908,7 +910,10 @@ const BlogContent = ({ onReadPost, onViewArchive }: { onReadPost: (post: BlogPos
 
         {/* Featured Post - Large Card */}
         <div
-          onClick={() => onReadPost(featuredPost)}
+          onClick={() => {
+            logEvent('Blog', 'View Post', featuredPost.title);
+            onReadPost(featuredPost);
+          }}
           className="group bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-8 md:p-12 cursor-pointer transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#4466FF] dark:hover:shadow-[12px_12px_0px_0px_#FFFF00] rounded-xl mb-6 md:mb-8 relative overflow-hidden"
         >
           <div className="absolute top-4 right-4 md:top-6 md:right-6">
@@ -944,7 +949,10 @@ const BlogContent = ({ onReadPost, onViewArchive }: { onReadPost: (post: BlogPos
           {otherPosts.map((post, index) => (
             <div
               key={post.id}
-              onClick={() => onReadPost(post)}
+              onClick={() => {
+                logEvent('Blog', 'View Post', post.title);
+                onReadPost(post);
+              }}
               className="group bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-6 md:p-8 cursor-pointer transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#4466FF] dark:hover:shadow-[8px_8px_0px_0px_#FFFF00] rounded-xl relative"
             >
               <div className="flex flex-wrap gap-2 mb-4">
@@ -995,7 +1003,10 @@ const ArchiveView = ({ onReadPost, onBack }: { onReadPost: (post: BlogPost) => v
         {BLOG_POSTS.map((post) => (
           <div
             key={post.id}
-            onClick={() => onReadPost(post)}
+            onClick={() => {
+              logEvent('Blog', 'View Post', post.title);
+              onReadPost(post);
+            }}
             className="group bg-white dark:bg-[#1E293B] border-2 border-black dark:border-white/10 p-6 md:p-8 cursor-pointer transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#4466FF] dark:hover:shadow-[8px_8px_0px_0px_#FFFF00] rounded-xl"
           >
             <div className="flex justify-between items-start mb-4 md:mb-6 border-b-2 border-black/5 dark:border-white/10 pb-4">
@@ -1039,6 +1050,7 @@ const ContactForm = () => {
 
     // Show success state
     setTimeout(() => setStatus('success'), 1000);
+    logEvent('Contact', 'Send Message', 'Form Submit');
   };
 
   if (status === 'success') {
@@ -1096,7 +1108,10 @@ const WorkSection = ({ onStudyClick }: { onStudyClick: (study: CaseStudy) => voi
           >
             <CaseStudyCard
               study={study}
-              onClick={() => onStudyClick(study)}
+              onClick={() => {
+                logEvent('Case Study', 'View Case Study', study.title);
+                onStudyClick(study);
+              }}
             />
           </div>
         ))}
@@ -1128,13 +1143,25 @@ const FooterContent = () => (
 
         <div className="flex flex-row gap-6 mb-8 md:mb-12">
           {/* Social Buttons */}
-          <a href={`https://${HERO_DATA.contact.linkedin}`} target="_blank" rel="noreferrer" className="group">
+          <a
+            href={`https://${HERO_DATA.contact.linkedin}`}
+            target="_blank"
+            rel="noreferrer"
+            className="group"
+            onClick={() => logEvent('Social', 'Click LinkedIn')}
+          >
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-[#0B1120] border-2 border-black dark:border-white flex items-center justify-center text-black dark:text-white shadow-[4px_4px_0px_0px_#4466FF] dark:shadow-[4px_4px_0px_0px_#FFFF00] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all rounded-sm">
               <Linkedin size={24} />
             </div>
           </a>
 
-          <a href={`https://${HERO_DATA.contact.github}`} target="_blank" rel="noreferrer" className="group">
+          <a
+            href={`https://${HERO_DATA.contact.github}`}
+            target="_blank"
+            rel="noreferrer"
+            className="group"
+            onClick={() => logEvent('Social', 'Click GitHub')}
+          >
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-[#0B1120] border-2 border-black dark:border-white flex items-center justify-center text-black dark:text-white shadow-[4px_4px_0px_0px_#00CCFF] dark:shadow-[4px_4px_0px_0px_#FFFF00] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all rounded-sm">
               <Github size={24} />
             </div>
@@ -1216,6 +1243,7 @@ const App = () => {
 
   return (
     <div className="bg-[#FFFF00] dark:bg-[#0B1120] min-h-screen font-sans p-2 md:p-3 pt-24 md:pt-28 text-[#4466FF] dark:text-gray-300 selection:bg-[#00CCFF] selection:text-black dark:selection:bg-[#FFFF00] transition-colors duration-300">
+      <Analytics />
       <GlobalStyles />
       <ScrollProgress />
       <Header onNavigate={handleNavigate} darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)} />
