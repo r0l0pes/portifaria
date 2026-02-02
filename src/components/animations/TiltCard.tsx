@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, HTMLMotionProps } from 'framer-motion';
+import { SPRING_STIFFNESS, SPRING_DAMPING, TILT_AMOUNT_DEFAULT, SCALE_DEFAULT } from '@/lib/constants';
 
 interface TiltCardProps extends HTMLMotionProps<"div"> {
     children: React.ReactNode;
@@ -9,13 +10,20 @@ interface TiltCardProps extends HTMLMotionProps<"div"> {
 }
 
 /**
- * 3D tilt card that follows mouse movement
+ * Interactive card that tilts toward the mouse cursor using spring physics.
+ * Supports keyboard activation and scales on hover.
+ * @param {TiltCardProps} props
+ * @param {React.ReactNode} props.children - Card content
+ * @param {string} [props.className] - Additional CSS classes
+ * @param {number} [props.tiltAmount=TILT_AMOUNT_DEFAULT] - Max tilt angle in degrees
+ * @param {number} [props.scale=SCALE_DEFAULT] - Scale factor on hover
+ * @returns {React.ReactElement} Tilt-enabled motion div
  */
-export const TiltCard: React.FC<TiltCardProps> = ({
+export const TiltCard: React.FC<TiltCardProps> = React.memo(({
     children,
     className = '',
-    tiltAmount = 10,
-    scale = 1.02,
+    tiltAmount = TILT_AMOUNT_DEFAULT,
+    scale = SCALE_DEFAULT,
     ...props
 }) => {
     const ref = useRef<HTMLDivElement>(null);
@@ -27,12 +35,12 @@ export const TiltCard: React.FC<TiltCardProps> = ({
 
     // Spring animations for smooth movement
     const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [tiltAmount, -tiltAmount]), {
-        stiffness: 300,
-        damping: 20,
+        stiffness: SPRING_STIFFNESS,
+        damping: SPRING_DAMPING,
     });
     const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-tiltAmount, tiltAmount]), {
-        stiffness: 300,
-        damping: 20,
+        stiffness: SPRING_STIFFNESS,
+        damping: SPRING_DAMPING,
     });
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -60,10 +68,20 @@ export const TiltCard: React.FC<TiltCardProps> = ({
         mouseY.set(0);
     };
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            (e.currentTarget as HTMLDivElement).click();
+        }
+    };
+
     return (
         <motion.div
             ref={ref}
             className={className}
+            role="button"
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -76,11 +94,11 @@ export const TiltCard: React.FC<TiltCardProps> = ({
             animate={{
                 scale: isHovered ? scale : 1,
             }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            transition={{ type: 'spring', stiffness: SPRING_STIFFNESS, damping: SPRING_DAMPING }}
         >
             <div style={{ transform: 'translateZ(20px)' }}>
                 {children}
             </div>
         </motion.div>
     );
-};
+});

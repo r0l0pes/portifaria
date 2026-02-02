@@ -1,3 +1,4 @@
+/** Key performance metric displayed in case study cards and modals. */
 export interface Metric {
   label: string;
   value: string;
@@ -5,6 +6,7 @@ export interface Metric {
   chartData?: { name: string; value: number }[];
 }
 
+/** Full case study with challenge, approach, outcomes, and lessons. */
 export interface CaseStudy {
   id: string;
   title: string;
@@ -28,6 +30,7 @@ export interface CaseStudy {
   }[];
 }
 
+/** Single entry in the professional experience timeline. */
 export interface ExperienceItem {
   company: string;
   role: string;
@@ -36,11 +39,13 @@ export interface ExperienceItem {
   description: string[];
 }
 
-export type ContentBlock = 
+/** Discriminated union for structured blog post content blocks. */
+export type ContentBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
   | { type: 'list'; items: string[] };
 
+/** Blog post with metadata, tags, and structured content blocks. */
 export interface BlogPost {
   id: string;
   title: string;

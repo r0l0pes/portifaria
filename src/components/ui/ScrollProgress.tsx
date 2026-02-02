@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
 /**
- * Scroll progress indicator - thin bar at top of page
+ * Fixed progress bar at the top of the viewport that scales with scroll position.
+ * @returns {React.ReactElement} Animated progress bar
  */
 export const ScrollProgress: React.FC = () => {
     const progress = useScrollProgress();
