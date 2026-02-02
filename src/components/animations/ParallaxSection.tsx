@@ -8,9 +8,14 @@ interface ParallaxSectionProps {
 }
 
 /**
- * Parallax wrapper that moves content at different speeds during scroll
+ * Parallax wrapper that moves content at different speeds during scroll.
+ * @param {ParallaxSectionProps} props
+ * @param {React.ReactNode} props.children - Content to apply parallax to
+ * @param {number} [props.speed=0.5] - Parallax speed multiplier (0.5 = half speed)
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {React.ReactElement} Parallax-scrolling container
  */
-export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
+export const ParallaxSection: React.FC<ParallaxSectionProps> = React.memo(({
     children,
     speed = 0.5,
     className = '',
@@ -32,7 +37,7 @@ export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
             </motion.div>
         </div>
     );
-};
+});
 
 interface ParallaxLayerProps {
     children: React.ReactNode;
@@ -41,7 +46,12 @@ interface ParallaxLayerProps {
 }
 
 /**
- * Individual parallax layer for multi-depth effects
+ * Individual parallax layer for multi-depth effects.
+ * @param {ParallaxLayerProps} props
+ * @param {React.ReactNode} props.children - Layer content
+ * @param {number} [props.speed=0.5] - Scroll speed multiplier
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {React.ReactElement} Parallax layer element
  */
 export const ParallaxLayer: React.FC<ParallaxLayerProps> = ({
     children,

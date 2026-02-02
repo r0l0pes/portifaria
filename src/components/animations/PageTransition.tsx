@@ -7,7 +7,11 @@ interface PageTransitionProps {
 }
 
 /**
- * Page transition wrapper for smooth view changes
+ * Wraps children with enter/exit animations for view transitions.
+ * @param {PageTransitionProps} props
+ * @param {React.ReactNode} props.children - Content to animate
+ * @param {'fade' | 'slide' | 'scale'} [props.mode='fade'] - Transition style
+ * @returns {React.ReactElement} Motion-wrapped element
  */
 export const PageTransition: React.FC<PageTransitionProps> = ({
     children,

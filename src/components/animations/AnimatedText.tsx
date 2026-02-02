@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { ANIMATION_DELAY_MS } from '@/lib/constants';
 
 interface AnimatedTextProps {
     children: string;
@@ -10,7 +11,14 @@ interface AnimatedTextProps {
 }
 
 /**
- * Animated text component with multiple reveal variants
+ * Animated text component with multiple reveal variants.
+ * @param {AnimatedTextProps} props
+ * @param {string} props.children - Text content to animate
+ * @param {string} [props.className] - Additional CSS classes
+ * @param {'fadeUp' | 'slideIn' | 'reveal'} [props.variant='fadeUp'] - Animation style
+ * @param {number} [props.delay=0] - Delay before animation starts (seconds)
+ * @param {boolean} [props.staggerChildren=false] - Animate each word separately
+ * @returns {React.ReactElement} Animated text element
  */
 export const AnimatedText: React.FC<AnimatedTextProps> = ({
     children,
@@ -29,7 +37,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: staggerChildren ? 0.1 : 0,
+                staggerChildren: staggerChildren ? ANIMATION_DELAY_MS / 1000 : 0,
                 delayChildren: delay,
             },
         },
@@ -92,7 +100,13 @@ interface CountUpProps {
 }
 
 /**
- * Count-up animation for numbers
+ * Animates a number from 0 to a target value with an ease-out cubic curve.
+ * @param {CountUpProps} props
+ * @param {number} props.end - Target number
+ * @param {number} [props.duration=2] - Animation duration in seconds
+ * @param {string} [props.suffix] - Text appended after the number
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {React.ReactElement} Span element displaying the animated count
  */
 export const CountUp: React.FC<CountUpProps> = ({
     end,
