@@ -7,20 +7,20 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "AI-Powered Agricultural Extension for Low-Literacy Farmers",
     "subtitle": "World Food Programme Innovation Accelerator",
     "role": "Senior Product Manager",
-    "summary": "Designed and executed pilot of generative AI voice agent for 5,000 farmers in Tanzania; demonstrated 60% cost efficiency potential vs. human-led outreach; presented strategic recommendations for scaling AI products across 20+ country programs.",
-    "challenge": "Standard AI voice interfaces assume reliable connectivity, smartphone literacy, and well-resourced training data. None of these held true for Tanzanian smallholder farmers. The product hypothesis needed validation before WFP committed to scaling, but the Innovation Accelerator structure prioritized speed over perfection, posing a risk of anecdotal findings rather than strategic clarity.",
+    "summary": "Designed and executed pilot of generative AI voice agent with 5,000 low-literacy farmers in Tanzania to assess delivery model feasibility; demonstrated 60% cost efficiency potential vs. human-led outreach; identified field officers as the critical intermediary adoption driver; informed WFP's AI investment strategy across 20+ country programs.",
+    "challenge": "Standard AI voice interfaces assume reliable connectivity, smartphone literacy, and well-resourced training data. None of these held true for Tanzanian smallholder farmers. The product hypothesis, that generative AI could replace human extension workers, needed validation before WFP committed to scaling. Without defined success metrics, the pilot risked producing anecdotal findings rather than the defensible investment recommendation leadership needed.",
     "approach": [
       {
         "title": "Defined Defensible Success Metrics",
-        "description": "Structured validation around three measurable dimensions: Adoption (40%+ weekly active usage), Retention (60%+ return users at 8 weeks), and Decision Quality (behavior change proxies since harvest cycles extended beyond pilot timeline)."
+        "description": "Structured validation around three measurable dimensions: Adoption (40%+ weekly active usage), Retention (60%+ return users at 8 weeks), and Decision Quality (behavior change proxies since harvest cycles extended beyond pilot timeline). Prioritized behavioral signals over perfect outcome measurement."
       },
       {
         "title": "Built Low-Connectivity Analytics",
-        "description": "Implemented tracking framework adapted for intermittent connectivity using call completion rates, session duration, NLP sentiment analysis on voice feedback, and manual field surveys for qualitative depth."
+        "description": "Implemented tracking framework adapted for intermittent connectivity using call completion rates, session duration, NLP sentiment analysis on voice feedback, and manual field surveys for qualitative depth. Pivoted mid-pilot from digital-only metrics after field observations revealed farmers sharing phones."
       },
       {
-        "title": "Ran Parallel AI Governance Stream",
-        "description": "Contributed to WFP's AI Sandbox, an internal platform enabling non-technical staff to test AI use cases, focusing on validation methodology and responsible AI principles for vulnerable populations."
+        "title": "Coordinated Distributed Stakeholders",
+        "description": "Managed weekly syncs across WFP field operations, Viamo engineering, and Innovation Accelerator leadership. Navigated misaligned incentives by translating each stakeholder's goals into shared success criteria, using early adoption curves and cost models to build alignment."
       },
       {
         "title": "Designed Strategic Recommendation Framework",
@@ -73,8 +73,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Integrating a B2B E-Commerce Platform Post-Merger for 60,000+ Workshops",
     "subtitle": "FORVIA HELLA - B2B E-Commerce Platform",
     "role": "Senior Product Manager",
-    "summary": "Enabled EUR 12M+ Year 1 cross-sell revenue through catalog unification and UX optimization serving 60,000+ workshops following the Faurecia-HELLA merger.",
-    "challenge": "HELLA Partner World operated as a single-vendor catalog optimized for lighting and electronics products. Post-merger, challenges included integrating Faurecia's 15,000+ SKUs without degrading search/navigation, commercial misalignment across silos, and UX debt in checkout flows optimized for single-vendor ordering.",
+    "summary": "Enabled €12M+ Year 1 cross-sell revenue through catalog unification and UX optimization serving 60,000+ workshops following the Faurecia-HELLA merger. Grew digital order share as the platform's North Star Metric.",
+    "challenge": "HELLA Partner World operated as a single-vendor catalog optimized for lighting and electronics products. Post-merger, three core challenges emerged: integrating Faurecia's 15,000+ SKUs without degrading search/navigation; commercial misalignment with cross-functional stakeholders operating in silos with conflicting priorities; and UX debt in checkout flows optimized for single-vendor ordering that created friction for multi-item, cross-brand purchases.",
     "approach": [
       {
         "title": "Phased Catalog Integration",
@@ -143,8 +143,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Scaling an E-Commerce Platform Across 4 LatAm Markets",
     "subtitle": "Natura & Co (via Accenture) - Multi-Country E-Commerce Platform",
     "role": "Senior Product Manager",
-    "summary": "Embedded as Senior PM within Accenture Brasil's delivery team for Natura & Co. Managed Brazil e-commerce checkout optimization (+45% conversion) and expanded the platform across Argentina, Colombia, Chile, and Mexico in 6 months, coordinating a 50+ person distributed team.",
-    "challenge": "Brazil's e-commerce checkout suffered from 70%+ abandonment due to complex address entry and fragmented payment preferences. Phase 2 required expanding to LatAm markets with distinct localization requirements (country-specific payment methods, language variants, regulatory compliance) while maintaining aggressive 6-month timeline.",
+    "summary": "Embedded as Senior PM within Accenture Brasil's delivery team for Natura & Co. Managed Brazil e-commerce checkout optimization (+45% conversion) and expanded the platform across 4 LatAm markets in 6 months, coordinating a 50+ person distributed team. Optimized for Natura's social commerce model, where consultant-shared links were the primary acquisition path.",
+    "challenge": "Brazil's e-commerce checkout suffered from 70%+ abandonment due to complex address entry and fragmented payment preferences. A key nuance: Natura's acquisition model relied on beauty consultants sharing product links directly with customers, meaning checkout optimization had to account for the full social commerce funnel. Phase 2 required expanding to LatAm markets with distinct localization requirements while maintaining an aggressive 6-month timeline.",
     "approach": [
       {
         "title": "Data-Driven Experimentation",
@@ -210,7 +210,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "subtitle": "C&A Brasil - Fashion E-Commerce Platform",
     "role": "Product Manager -> Senior PM",
     "summary": "Joined C&A Brasil (R$7B revenue, 280+ stores) as the most junior PM. Over 18 months, redesigned mobile checkout, expanded payment methods, and ran 15+ A/B tests, achieving +28% conversion and -18% abandonment. Promoted to Senior PM based on measurable impact.",
-    "challenge": "Mobile checkout abandonment sat at 70-75% on a platform serving 80%+ mobile traffic. Friction points included 12-field forms requiring manual entry, limited payment options (missing Boleto/installments), and poor multi-item cart UX. Needed to prove value quickly through measurable outcomes.",
+    "challenge": "Mobile checkout abandonment sat at 70–75% on a platform serving 80%+ mobile traffic. Beyond form friction and poor multi-item cart UX, the core payment barrier was systemic: over 70% of Brazilian e-commerce purchases used instalment plans and card penetration was below 50%, meaning a checkout showing only lump-sum, card-only options was filtering out a significant share of shoppers before they could buy.",
     "approach": [
       {
         "title": "Funnel Analysis and Diagnosis",
@@ -222,7 +222,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         "title": "Payment Method Expansion",
-        "description": "Added Boleto bancario, increased installment plan visibility, integrated Mercado Pago. Key insight: Brazilian consumers prefer installments, so made pricing split more prominent."
+        "description": "Introduced Boleto bancário and repositioned instalment pricing as the default display format (e.g., 'R$120 or 12x R$10' instead of lump sum), removing the payment barrier filtering out credit-constrained shoppers. In a market where 70%+ of purchases are made in parcelas and card penetration was below 50%, showing a lump-sum price was a conversion barrier, not a design choice. Also integrated Mercado Pago as an alternative wallet."
       },
       {
         "title": "Experimentation Rigor",
