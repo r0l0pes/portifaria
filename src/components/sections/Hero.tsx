@@ -16,7 +16,6 @@ const BTN = {
 const stats = [
   { value: '8+', label: 'Years PM' },
   { value: '4', label: 'Countries' },
-  { value: '20+', label: 'Products' },
 ];
 
 const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) => (
@@ -25,7 +24,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
     <motion.div {...fade(0)}>
       <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#EDE7D9] text-ink text-sm font-medium rounded-full border border-terracotta/20 mb-10">
         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-        Open to Opportunities · Berlin
+        Open to Opportunities
       </span>
     </motion.div>
 
