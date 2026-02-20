@@ -1,29 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @import "tailwindcss";
 @config "./tailwind.config.js";
 
-:root {
-  --scrollbar-track: #FFFF00;
-  --scrollbar-thumb: #00CCFF;
-  --scrollbar-border: #FFFF00;
-  --scrollbar-hover: #4466FF;
+@theme {
+  --color-cream: #F5E9D0;
+  --color-sand: #EAD9BA;
+  --color-terracotta: #C05030;
+  --color-terracotta-dark: #A03F22;
+  --color-amber: #C09020;
+  --color-olive: #344020;
+  --color-ink: #1A1710;
+  --color-ink-muted: #7A6E60;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
 }
 
-.dark {
-  --scrollbar-track: #000000;
-  --scrollbar-thumb: #333333;
-  --scrollbar-border: #000000;
-  --scrollbar-hover: #00CCFF;
+:root {
+  --scrollbar-track: #F5E9D0;
+  --scrollbar-thumb: #C05030;
+  --scrollbar-border: #F5E9D0;
+  --scrollbar-hover: #A03F22;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: #F5E9D0;
+}
+
+/* Subtle graph-paper texture on the page background */
+.page-bg {
+  background-color: #F5E9D0;
+  background-image:
+    linear-gradient(rgba(26, 23, 16, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 23, 16, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* Cozy tile wall — used on the Work section card */
+.tile-bg {
+  background-color: #EAD9BA !important;
+  background-image:
+    linear-gradient(rgba(26, 23, 16, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 23, 16, 0.09) 1px, transparent 1px) !important;
+  background-size: 52px 52px !important;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
@@ -31,12 +54,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   border: 2px solid var(--scrollbar-border);
-  border-radius: 0px;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-hover);
-}
-
-.text-outline {
-   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
