@@ -33,12 +33,12 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
       {...fade(0.08)}
       className="text-5xl sm:text-7xl md:text-8xl lg:text-[6rem] font-black font-display text-ink tracking-tight leading-[1.0] mb-8 max-w-4xl"
     >
-      From <span className="text-terracotta">Hypothesis</span>
-      <br />to <span className="text-terracotta">Impact.</span>
+      Experiments that<br />
+      <span className="text-terracotta">accelerate revenue.</span>
     </motion.h1>
 
     <motion.p {...fade(0.16)} className="text-lg md:text-xl text-ink-muted max-w-lg mb-10 leading-relaxed">
-      Senior PM with 8+ years de-risking innovation across e-commerce, B2B platforms, and AI products.
+      Senior Growth Product Manager with 8+ years improving conversion, activation, and retention across B2C e-commerce, B2B platforms, and AI products. Based in Berlin.
     </motion.p>
 
     <motion.div {...fade(0.22)} className="flex flex-col sm:flex-row items-center gap-4 mb-16">
@@ -56,7 +56,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
         onClick={() => onNavigate('contact')}
         className="text-ink-muted font-medium hover:text-terracotta transition-colors text-sm underline underline-offset-4 decoration-ink/20 hover:decoration-terracotta"
       >
-        or get in touch
+        Get in touch
       </button>
     </motion.div>
 

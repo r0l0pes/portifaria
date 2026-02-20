@@ -4,7 +4,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs1",
     "category": "Humanitarian Tech Aid - AI Validation & Adoption",
-    "title": "AI-Powered Agricultural Extension for Low-Literacy Farmers",
+    "title": "Scaling AI Voice Tech for Low-Literacy Farmers",
     "subtitle": "World Food Programme Innovation Accelerator",
     "role": "Senior Product Manager",
     "summary": "Designed and executed pilot of generative AI voice agent with 5,000 low-literacy farmers in Tanzania to assess delivery model feasibility; demonstrated 60% cost efficiency potential vs. human-led outreach; identified field officers as the critical intermediary adoption driver; informed WFP's AI investment strategy across 20+ country programs.",
@@ -70,7 +70,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs2",
     "category": "Automotive B2B - Post-Merger Integration",
-    "title": "Integrating a B2B E-Commerce Platform Post-Merger for 60,000+ Workshops",
+    "title": "Unifying a B2B E-Commerce Platform Post-Merger",
     "subtitle": "FORVIA HELLA - B2B E-Commerce Platform",
     "role": "Senior Product Manager",
     "summary": "Enabled €12M+ Year 1 cross-sell revenue through catalog unification and UX optimization serving 60,000+ workshops following the Faurecia-HELLA merger. Grew digital order share as the platform's North Star Metric.",
@@ -140,7 +140,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs3",
     "category": "E-Commerce - Growth & International Expansion",
-    "title": "Scaling an E-Commerce Platform Across 4 LatAm Markets",
+    "title": "Expanding E-Commerce Operations Across 4 LatAm Markets",
     "subtitle": "Natura & Co (via Accenture) - Multi-Country E-Commerce Platform",
     "role": "Senior Product Manager",
     "summary": "Embedded as Senior PM within Accenture Brasil's delivery team for Natura & Co. Managed Brazil e-commerce checkout optimization (+45% conversion) and expanded the platform across 4 LatAm markets in 6 months, coordinating a 50+ person distributed team. Optimized for Natura's social commerce model, where consultant-shared links were the primary acquisition path.",

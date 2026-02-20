@@ -22,21 +22,22 @@ const AboutContent = () => {
           <div>
             <h3 className="text-base font-semibold text-ink-muted uppercase tracking-wide mb-2">What I do</h3>
             <p>
-              I build products in environments where the path forward isn't clear. My focus is on data-driven experimentation, cross-functional coordination, and turning ambiguous problems into outcomes people can act on.
+              I am a Senior Growth Product Manager with 8+ years improving conversion, activation, and retention across B2C e-commerce, B2B self-serve platforms, and digital products in Europe and LatAm.
             </p>
             <p className="mt-2">
-              The work tends to happen in complex situations: AI for vulnerable populations, post-merger B2B integration, multi-country platform expansions. Places where conventional playbooks break down and you need to figure it out as you go.
+              My focus is on designing structured experimentation programs spanning checkout funnels, in-product onboarding, and multi-market rollouts. I turn ambiguous problems and complex data into product decisions that scale.
             </p>
           </div>
 
           <div>
             <h3 className="text-base font-semibold text-ink-muted uppercase tracking-wide mb-2">Background</h3>
-            <p>
-              I'm a Senior Product Manager, currently based in Berlin. Most recently at the World Food Programme in Munich, working on generative AI voice technology and contributing to organizational AI governance. Before that, FORVIA HELLA, unifying product catalogs from two recently merged automotive companies into a single online experience for workshop customers. Earlier, Accenture Brasil, embedded with Natura to scale their e-commerce platform across four Latin American countries. Started at C&A Brasil, working on mobile shopping and early WhatsApp commerce integration.
-            </p>
-            <p className="mt-2">
-              I got into product through a digital agency I founded in São Paulo while finishing university. Started building solutions for SMBs, realized the work I enjoyed most was understanding what to build and why, and transitioned into product management. That was 2018.
-            </p>
+            <p className="mb-2">I am a Senior Product Manager based in Berlin. My recent path:</p>
+            <ul className="list-disc pl-5 space-y-2 text-base md:text-lg text-ink/80 text-left">
+              <li><strong>World Food Programme (Munich):</strong> Shipped generative AI voice tech and shaped organizational AI governance.</li>
+              <li><strong>FORVIA HELLA:</strong> Unified B2B e-commerce catalogs for 60,000+ workshops post-merger.</li>
+              <li><strong>Accenture Brasil (Natura):</strong> Scaled an e-commerce platform across four Latin American countries and improved conversion rates.</li>
+              <li><strong>C&A Brasil:</strong> Led mobile shopping and early WhatsApp commerce integration, establishing the channel as a retention lever.</li>
+            </ul>
           </div>
 
           <div>
@@ -52,17 +53,16 @@ const AboutContent = () => {
           <motion.a
             href="/Resume_Rodrigo-Lopes.pdf"
             download
-            aria-label="Download Resume PDF"
+            aria-label="Download CV PDF"
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold text-sm rounded-xl"
             style={{ background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)', boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)' }}
-            onClick={() => logEvent('Engagement', 'Download Resume')}
+            onClick={() => logEvent('Engagement', 'Download CV')}
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98, y: 2 }}
-            whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
             <Download size={16} />
-            Download Resume
+            Download CV
           </motion.a>
         </div>
 

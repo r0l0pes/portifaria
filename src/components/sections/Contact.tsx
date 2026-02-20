@@ -78,7 +78,7 @@ const FooterContent = () => (
   <div className="max-w-2xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-black text-terracotta font-display mb-3 leading-none">Let's Talk</h2>
     <p className="text-ink-muted mb-8 text-base max-w-sm">
-      Open to new roles. I respond within 24 hours.
+      Open to Senior and Group PM roles. I respond within 24 hours.
     </p>
 
     <a
