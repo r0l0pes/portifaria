@@ -13,19 +13,27 @@ const BTN = {
   boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)',
 };
 
-const stats = [
-  { value: '8+', label: 'Years PM' },
-  { value: '4', label: 'Countries' },
-];
+
 
 const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) => (
   <div className="flex flex-col items-center justify-center text-center min-h-[80vh] py-16 md:py-24">
 
-    <motion.div {...fade(0)}>
-      <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#EDE7D9] text-ink text-sm font-medium rounded-full border border-terracotta/20 mb-10">
-        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-        Open to Opportunities
-      </span>
+    <motion.div
+      {...fade(0)}
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+      className="mb-10 inline-block cursor-default"
+    >
+      <div className="relative group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-terracotta/40 to-amber-500/40 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-500 group-hover:duration-200"></div>
+        <span className="relative inline-flex items-center gap-2 px-4 py-2 bg-[#EDE7D9] text-ink text-sm font-medium rounded-full border border-terracotta/20 shadow-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          Open to Opportunities
+        </span>
+      </div>
     </motion.div>
 
     <motion.h1
@@ -36,8 +44,8 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
       <span className="text-terracotta">accelerate revenue.</span>
     </motion.h1>
 
-    <motion.p {...fade(0.16)} className="text-lg md:text-xl text-ink-muted max-w-lg mb-10 leading-relaxed mx-auto">
-      Senior Product Manager delivering measurable impact across e-commerce, B2B platforms, and AI products.
+    <motion.p {...fade(0.16)} className="text-lg md:text-xl text-ink-muted w-full max-w-[850px] mb-10 leading-relaxed mx-auto">
+      Senior Growth Product Manager delivering measurable impact across e-commerce, B2B platforms, and AI products.
     </motion.p>
 
     <motion.div {...fade(0.22)} className="flex flex-col sm:flex-row items-center gap-4 mb-16">
@@ -59,14 +67,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
       </button>
     </motion.div>
 
-    <motion.div {...fade(0.32)} className="flex gap-10 md:gap-16">
-      {stats.map(({ value, label }) => (
-        <div key={label} className="text-center">
-          <div className="text-2xl md:text-3xl font-black text-terracotta font-display">{value}</div>
-          <div className="text-xs text-ink-muted uppercase tracking-widest mt-0.5">{label}</div>
-        </div>
-      ))}
-    </motion.div>
+
 
   </div>
 );

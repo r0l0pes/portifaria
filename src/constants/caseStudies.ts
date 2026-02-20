@@ -4,7 +4,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs1",
     "category": "AI & Humanitarian Tech",
-    "title": "Generative AI Voice Agent",
+    "title": "Piloting a Generative AI Voice Agent for Low-Literacy Farmers",
     "subtitle": "World Food Programme Innovation Accelerator",
     "role": "Senior Product Manager",
     "summary": "Demonstrated 60% cost efficiency potential for WFP's agricultural outreach by successfully piloting a generative AI voice agent with 5,000 low-literacy farmers in Tanzania. The core challenge was designing for users with zero smartphone literacy and intermittent connectivity. We proved the model viability by identifying field officers as the critical intermediary adoption driver, informing AI strategy across 20+ countries.",
