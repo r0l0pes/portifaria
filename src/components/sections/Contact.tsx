@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { HERO_DATA } from '@/constants';
 import { logEvent } from '../../components/Analytics';
+
+const BTN = {
+  background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)',
+  boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)',
+};
 
 const ContactForm = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -9,111 +15,103 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
-
-    const mailtoLink = `mailto:${HERO_DATA.contact.email}?subject=Message from Portfolio - ${name}&body=${message}%0D%0A%0D%0AFrom: ${name} (${email})`;
-    window.location.href = mailtoLink;
-
+    window.location.href = `mailto:${HERO_DATA.contact.email}?subject=Message from Portfolio - ${name}&body=${message}%0D%0A%0D%0AFrom: ${name} (${email})`;
     setTimeout(() => setStatus('success'), 1000);
     logEvent('Contact', 'Send Message', 'Form Submit');
   };
 
   if (status === 'success') {
     return (
-      <div className="bg-terracotta/10 border border-terracotta/30 p-6 md:p-8 text-center rounded-xl">
-        <h3 className="text-xl font-bold text-ink mb-2">Opening Email...</h3>
-        <p className="text-ink-muted mb-4 text-sm">Thanks for reaching out. Check your email client to send the message.</p>
-        <button onClick={() => setStatus('idle')} className="text-xs font-medium text-terracotta underline">Send another message</button>
+      <div className="bg-terracotta/10 border border-terracotta/30 p-6 text-center rounded-2xl">
+        <h3 className="text-lg font-bold text-ink mb-2">Opening Email...</h3>
+        <p className="text-ink-muted mb-4 text-sm">Check your email client to send the message.</p>
+        <button onClick={() => setStatus('idle')} className="text-xs font-medium text-terracotta underline">Send another</button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="name" className="block text-xs font-medium text-ink-muted mb-1.5">Name</label>
-        <input required name="name" type="text" id="name" className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="Your name" />
+        <input required name="name" type="text" id="name"
+          className="w-full bg-[#EDE7D9] border border-ink/10 p-3.5 text-ink font-medium focus:outline-none focus:border-terracotta/50 focus:ring-2 focus:ring-terracotta/10 transition-all rounded-xl text-sm"
+          placeholder="Your name" />
       </div>
       <div>
         <label htmlFor="email" className="block text-xs font-medium text-ink-muted mb-1.5">Email</label>
-        <input required name="email" type="email" id="email" className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="your@email.com" />
+        <input required name="email" type="email" id="email"
+          className="w-full bg-[#EDE7D9] border border-ink/10 p-3.5 text-ink font-medium focus:outline-none focus:border-terracotta/50 focus:ring-2 focus:ring-terracotta/10 transition-all rounded-xl text-sm"
+          placeholder="your@email.com" />
       </div>
       <div>
         <label htmlFor="message" className="block text-xs font-medium text-ink-muted mb-1.5">Message</label>
-        <textarea required name="message" id="message" rows={4} className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="How can I help?"></textarea>
+        <textarea required name="message" id="message" rows={4}
+          className="w-full bg-[#EDE7D9] border border-ink/10 p-3.5 text-ink font-medium focus:outline-none focus:border-terracotta/50 focus:ring-2 focus:ring-terracotta/10 transition-all rounded-xl text-sm"
+          placeholder="What are you working on?" />
       </div>
-      <button type="submit" disabled={status === 'submitting'} className="w-full py-3.5 md:py-4 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed text-sm rounded-xl" style={{ background: '#B85538', boxShadow: '0 2px 0 #7A2E14, 0 4px 10px rgba(0,0,0,0.12)' }}>
-        {status === 'submitting' ? 'Preparing Email...' : 'Send Message'}
-      </button>
+      <motion.button
+        type="submit"
+        disabled={status === 'submitting'}
+        className="w-full py-4 text-white font-semibold text-sm rounded-xl disabled:opacity-50"
+        style={BTN}
+        whileHover={{ y: -1, boxShadow: '0 6px 0 #6B2210, 0 12px 24px rgba(0,0,0,0.15)' }}
+        whileTap={{ y: 3, boxShadow: '0 1px 0 #6B2210' }}
+        transition={{ type: 'spring', stiffness: 500, damping: 20 }}
+      >
+        {status === 'submitting' ? 'Opening Email...' : 'Send Message'}
+      </motion.button>
     </form>
   );
 };
 
+const socialLinks = [
+  { key: 'linkedin', Icon: Linkedin, label: 'LinkedIn', getHref: () => `https://${HERO_DATA.contact.linkedin}`, event: 'Click LinkedIn' },
+  { key: 'github', Icon: Github, label: 'GitHub', getHref: () => `https://${HERO_DATA.contact.github}`, event: 'Click GitHub' },
+];
+
 const FooterContent = () => (
-  <div>
-    <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-      {/* Left Column */}
-      <div className="text-left order-2 md:order-1">
-        <h2 className="text-4xl md:text-6xl font-black text-terracotta font-display mb-4 md:mb-6 leading-none">Let's Talk</h2>
-        <p className="text-ink-muted mb-6 md:mb-8 text-base md:text-lg max-w-md">
-          I'm open to new opportunities.
-        </p>
+  <div className="max-w-2xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-black text-terracotta font-display mb-3 leading-none">Let's Talk</h2>
+    <p className="text-ink-muted mb-8 text-base max-w-sm">
+      Open to new roles. I respond within 24 hours.
+    </p>
 
-        <a
-          href={`mailto:${HERO_DATA.contact.email}`}
-          className="inline-flex items-center gap-3 text-ink text-base md:text-lg font-medium hover:text-terracotta transition-colors mb-8 md:mb-12 group"
-        >
-          <Mail size={20} className="text-terracotta" />
-          <span className="border-b border-transparent group-hover:border-terracotta transition-all">
-            {HERO_DATA.contact.email}
-          </span>
+    <a
+      href={`mailto:${HERO_DATA.contact.email}`}
+      className="inline-flex items-center gap-3 text-ink text-base font-semibold hover:text-terracotta transition-colors mb-8 group"
+    >
+      <Mail size={18} className="text-terracotta" />
+      <span className="underline underline-offset-4 decoration-ink/20 group-hover:decoration-terracotta transition-all">
+        {HERO_DATA.contact.email}
+      </span>
+    </a>
+
+    <div className="flex gap-3 mb-12">
+      {socialLinks.map(({ key, Icon, label, getHref, event }) => (
+        <a key={key} href={getHref()} target="_blank" rel="noreferrer" onClick={() => logEvent('Social', event)}>
+          <motion.div
+            className="flex items-center gap-2.5 px-4 py-2.5 bg-[#EDE7D9] border border-ink/[0.08] rounded-xl text-ink-muted text-sm font-medium"
+            whileHover={{ backgroundColor: '#B85538', color: '#ffffff', y: -2, boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}
+            whileTap={{ y: 1 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
+            <Icon size={16} />
+            {label}
+          </motion.div>
         </a>
-
-        <div className="flex flex-row gap-4 mb-8 md:mb-12">
-          <a
-            href={`https://${HERO_DATA.contact.linkedin}`}
-            target="_blank"
-            rel="noreferrer"
-            className="group"
-            onClick={() => logEvent('Social', 'Click LinkedIn')}
-          >
-            <div className="w-12 h-12 bg-white border border-ink/15 flex items-center justify-center text-ink-muted group-hover:text-terracotta group-hover:border-terracotta/30 transition-all rounded-xl">
-              <Linkedin size={20} />
-            </div>
-          </a>
-
-          <a
-            href={`https://${HERO_DATA.contact.github}`}
-            target="_blank"
-            rel="noreferrer"
-            className="group"
-            onClick={() => logEvent('Social', 'Click GitHub')}
-          >
-            <div className="w-12 h-12 bg-white border border-ink/15 flex items-center justify-center text-ink-muted group-hover:text-terracotta group-hover:border-terracotta/30 transition-all rounded-xl">
-              <Github size={20} />
-            </div>
-          </a>
-        </div>
-      </div>
-
-      {/* Right Column: Contact Form */}
-      <div className="bg-white/60 p-6 md:p-10 border border-ink/[0.08] order-1 md:order-2 rounded-2xl">
-        <h3 className="text-lg md:text-xl font-bold text-ink mb-6">Send a Message</h3>
-        <ContactForm />
-      </div>
+      ))}
     </div>
 
-    <div className="mt-16 md:mt-24 pt-8 border-t border-ink/[0.08] flex flex-col md:flex-row justify-between items-center gap-4">
-      <div className="text-ink-muted text-xs">
-        &copy; {new Date().getFullYear()} Rodrigo Lopes.
-      </div>
-      <div className="text-ink-muted text-xs">
-        Designed & Built with React
-      </div>
+    <ContactForm />
+
+    <div className="mt-16 pt-8 border-t border-ink/[0.08] flex justify-between items-center text-ink-muted text-xs">
+      <span>&copy; {new Date().getFullYear()} Rodrigo Lopes</span>
+      <span>Built with React</span>
     </div>
   </div>
 );

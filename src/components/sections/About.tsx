@@ -18,7 +18,7 @@ const AboutContent = () => {
       </div>
 
       <div className="max-w-4xl space-y-8">
-        <div className="text-base md:text-lg text-ink/80 leading-relaxed space-y-6">
+        <div className="text-base md:text-lg text-ink/80 leading-relaxed space-y-6 [&_p]:text-justify [&_p]:hyphens-auto">
           <div>
             <h3 className="text-base font-semibold text-ink-muted uppercase tracking-wide mb-2">What I do</h3>
             <p>
@@ -54,7 +54,7 @@ const AboutContent = () => {
             download
             aria-label="Download Resume PDF"
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold text-sm rounded-xl"
-            style={{ background: '#B85538', boxShadow: '0 2px 0 #7A2E14, 0 4px 10px rgba(0,0,0,0.12)' }}
+            style={{ background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)', boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)' }}
             onClick={() => logEvent('Engagement', 'Download Resume')}
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98, y: 2 }}

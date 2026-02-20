@@ -118,14 +118,14 @@ const CaseStudyModal = ({ study, onClose, onNext, onPrev }: { study: CaseStudy; 
               <div className="md:col-span-2 space-y-10 md:space-y-12">
 
                 <section>
-                  <h3 className="text-xl md:text-2xl font-black text-ink mb-4 md:mb-6 flex items-center gap-3 font-display">
+                  <h3 className="text-xl md:text-2xl font-black text-terracotta mb-4 md:mb-6 flex items-center gap-3 font-display">
                     <span className="w-3 h-3 bg-ink/20 rounded-sm"></span> Challenge
                   </h3>
                   <p className="text-ink/70 leading-relaxed text-base md:text-lg">{study.challenge}</p>
                 </section>
 
                 <section>
-                  <h3 className="text-xl md:text-2xl font-black text-ink mb-4 md:mb-6 flex items-center gap-3 font-display">
+                  <h3 className="text-xl md:text-2xl font-black text-terracotta mb-4 md:mb-6 flex items-center gap-3 font-display">
                     <span className="w-3 h-3 bg-terracotta rounded-sm"></span> Approach
                   </h3>
                   <div className="space-y-4 md:space-y-6">
@@ -139,7 +139,7 @@ const CaseStudyModal = ({ study, onClose, onNext, onPrev }: { study: CaseStudy; 
                 </section>
 
                 <section>
-                  <h3 className="text-xl md:text-2xl font-black text-ink mb-4 md:mb-6 flex items-center gap-3 font-display">
+                  <h3 className="text-xl md:text-2xl font-black text-terracotta mb-4 md:mb-6 flex items-center gap-3 font-display">
                     <span className="w-3 h-3 bg-amber rounded-sm"></span> Outcomes
                   </h3>
                   <div className="grid gap-4">
