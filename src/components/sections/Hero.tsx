@@ -1,82 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, BarChart3, Brain, Globe, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const BTN_STYLE = {
+  background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)',
+  boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)',
+};
 
 const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
+  useEffect(() => { setLoaded(true); }, []);
 
   return (
-    <div className="flex flex-col justify-center min-h-[60vh] md:min-h-[70vh] py-12">
-      <div className="space-y-10 relative z-10 max-w-6xl mx-auto text-center md:text-left">
-        <h1 className={`text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[1.05] text-ink tracking-tighter break-words transition-all duration-700 font-display ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="block mb-2 md:mb-4">From</span>
-          <span className="relative inline-block">
-            <span className="absolute inset-0 bg-terracotta/15 rounded-lg -skew-x-2"></span>
-            <span className="relative z-10 px-4 md:px-6 text-terracotta">Hypothesis</span>
-          </span>
-          <br className="hidden md:block" />
-          <span className="block mt-4 md:mt-6">
-            To
-            <span className="relative inline-block ml-4 md:ml-8">
-              <span className="absolute inset-0 bg-amber/20 rounded-lg skew-x-1"></span>
-              <span className="relative z-10 px-4 md:px-6 text-terracotta">Impact.</span>
-            </span>
-          </span>
-        </h1>
+    <div className="flex flex-col justify-center min-h-[60vh] md:min-h-[70vh]">
+      {/* Hero card — contained, warm surface */}
+      <div className="bg-[#EDE7D9] rounded-3xl p-8 md:p-16 max-w-5xl mx-auto w-full">
+        <div className={`space-y-8 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-        <p className={`text-lg md:text-2xl text-ink-muted max-w-3xl leading-relaxed font-medium mx-auto md:mx-0 transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          Senior Product Manager with 8+ years in e-commerce growth, B2B platforms, and international expansion.
-        </p>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-ink tracking-tight font-display">
+            From <span className="text-terracotta">Hypothesis</span>
+            <br />
+            To <span className="text-terracotta">Impact.</span>
+          </h1>
 
-        <div className={`flex items-center justify-center md:justify-start transition-all duration-700 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 text-green-700 rounded-full text-sm font-medium border border-green-500/20">
-            <Sparkles size={16} className="animate-pulse" />
-            Open to Opportunities
-          </span>
-        </div>
+          <p className="text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
+            Senior Product Manager with 8+ years in e-commerce growth, B2B platforms, and international expansion.
+          </p>
 
-        <div className={`flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start pt-4 transition-all duration-700 delay-400 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <motion.button
-            onClick={() => onNavigate('work')}
-            aria-label="View Case Studies"
-            className="px-8 py-4 text-white font-semibold text-base flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl"
-            style={{ background: '#B85538', boxShadow: '0 3px 0 #7A2E14, 0 6px 16px rgba(0,0,0,0.15)' }}
-            whileHover={{ scale: 1.02, y: -1 }}
-            whileTap={{ scale: 0.98, y: 2 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
-            See Case Studies <motion.span
-              animate={{ x: [0, 5, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-            ><ArrowRight size={18} /></motion.span>
-          </motion.button>
-          <motion.button
-            onClick={() => onNavigate('contact')}
-            aria-label="Get in Touch"
-            className="px-8 py-4 text-ink font-semibold text-base flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl transition-colors"
-            style={{ background: 'rgba(26,23,16,0.06)', border: '1px solid rgba(26,23,16,0.12)' }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
-            Get in Touch
-          </motion.button>
-        </div>
-
-        <div className={`pt-8 md:pt-12 flex flex-wrap justify-center md:justify-start gap-3 transition-all duration-700 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-2 bg-ink/5 text-ink-muted px-3 py-1.5 rounded-full text-xs font-medium hover:bg-ink/10 transition-colors cursor-default">
-            <BarChart3 size={13} /> Data-Driven
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+            <motion.button
+              onClick={() => onNavigate('work')}
+              className="px-8 py-4 text-white font-semibold text-base rounded-xl flex items-center gap-2"
+              style={BTN_STYLE}
+              whileHover={{ y: -2, boxShadow: '0 6px 0 #6B2210, 0 10px 24px rgba(0,0,0,0.15)' }}
+              whileTap={{ y: 2, boxShadow: '0 2px 0 #6B2210, 0 4px 10px rgba(0,0,0,0.1)' }}
+              transition={{ type: 'spring', stiffness: 500, damping: 20 }}
+            >
+              See Case Studies <ArrowRight size={18} />
+            </motion.button>
+            <button
+              onClick={() => onNavigate('contact')}
+              className="text-ink-muted font-medium hover:text-terracotta transition-colors text-sm underline underline-offset-4"
+            >
+              or get in touch
+            </button>
           </div>
-          <div className="flex items-center gap-2 bg-ink/5 text-ink-muted px-3 py-1.5 rounded-full text-xs font-medium hover:bg-ink/10 transition-colors cursor-default">
-            <Brain size={13} /> Product Strategy
-          </div>
-          <div className="flex items-center gap-2 bg-ink/5 text-ink-muted px-3 py-1.5 rounded-full text-xs font-medium hover:bg-ink/10 transition-colors cursor-default">
-            <Globe size={13} /> Global Scale
-          </div>
+
         </div>
       </div>
     </div>

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
+
+const BTN_STYLE = {
+  background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)',
+  boxShadow: '0 3px 0 #6B2210, 0 6px 14px rgba(0,0,0,0.12)',
+};
 
 const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   const { navigate } = useApp();
@@ -45,13 +51,16 @@ const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
               {link.name}
             </button>
           ))}
-          <button
+          <motion.button
             onClick={() => handleNavClick('contact')}
             className="px-5 py-2.5 text-sm font-semibold text-white rounded-xl"
-            style={{ background: '#B85538', boxShadow: '0 2px 0 #7A2E14, 0 4px 8px rgba(0,0,0,0.15)' }}
+            style={BTN_STYLE}
+            whileHover={{ y: -1, boxShadow: '0 4px 0 #6B2210, 0 8px 18px rgba(0,0,0,0.15)' }}
+            whileTap={{ y: 2, boxShadow: '0 1px 0 #6B2210, 0 2px 6px rgba(0,0,0,0.1)' }}
+            transition={{ type: 'spring', stiffness: 500, damping: 20 }}
           >
             Get in Touch
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Nav Toggle */}
