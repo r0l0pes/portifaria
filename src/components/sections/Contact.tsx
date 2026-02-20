@@ -46,7 +46,7 @@ const ContactForm = () => {
         <label htmlFor="message" className="block text-xs font-medium text-ink-muted mb-1.5">Message</label>
         <textarea required name="message" id="message" rows={4} className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="How can I help?"></textarea>
       </div>
-      <button type="submit" disabled={status === 'submitting'} className="w-full py-3.5 md:py-4 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed text-sm rounded-xl" style={{ background: 'linear-gradient(160deg, #C05030 0%, #A03F22 100%)' }}>
+      <button type="submit" disabled={status === 'submitting'} className="w-full py-3.5 md:py-4 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed text-sm rounded-xl" style={{ background: '#B85538', boxShadow: '0 2px 0 #7A2E14, 0 4px 10px rgba(0,0,0,0.12)' }}>
         {status === 'submitting' ? 'Preparing Email...' : 'Send Message'}
       </button>
     </form>

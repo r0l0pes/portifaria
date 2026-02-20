@@ -7,7 +7,7 @@ const SectionCard = ({ id, className = "", children, style }: { id?: string, cla
   <section
     id={id}
     style={style}
-    className={`bg-[#FAF6EE] rounded-2xl md:rounded-3xl p-6 md:p-12 shadow-sm border border-ink/[0.06] mx-auto max-w-7xl w-full mb-4 last:mb-0 relative overflow-hidden ${className}`}
+    className={`bg-transparent mx-auto max-w-5xl w-full py-16 md:py-24 px-6 md:px-12 relative ${className}`}
   >
     {children}
   </section>

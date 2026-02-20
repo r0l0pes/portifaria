@@ -47,8 +47,8 @@ const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
           ))}
           <button
             onClick={() => handleNavClick('contact')}
-            className="px-5 py-2 text-sm font-semibold text-white transition-colors rounded-lg"
-            style={{ background: 'linear-gradient(160deg, #C05030 0%, #A03F22 100%)' }}
+            className="px-5 py-2.5 text-sm font-semibold text-white rounded-xl"
+            style={{ background: '#B85538', boxShadow: '0 2px 0 #7A2E14, 0 4px 8px rgba(0,0,0,0.15)' }}
           >
             Get in Touch
           </button>

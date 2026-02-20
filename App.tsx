@@ -23,7 +23,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-cream page-bg min-h-screen font-sans p-2 md:p-3 pt-24 md:pt-28 text-ink selection:bg-terracotta/20 selection:text-ink">
+    <div className="bg-cream page-bg min-h-screen font-sans pt-20 md:pt-24 text-ink selection:bg-terracotta/20 selection:text-ink">
       <Analytics />
       <ScrollProgress />
       <Header onNavigate={handleNavigate} />
@@ -43,7 +43,7 @@ const App = () => {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <SectionCard id="work" className="tile-bg">
+            <SectionCard id="work">
               <WorkSection onStudyClick={setActiveStudy} />
             </SectionCard>
           </ErrorBoundary>

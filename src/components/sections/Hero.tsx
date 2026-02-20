@@ -43,9 +43,10 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
           <motion.button
             onClick={() => onNavigate('work')}
             aria-label="View Case Studies"
-            className="px-8 py-4 text-white font-semibold text-sm flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl"
-            style={{ background: 'linear-gradient(160deg, #C05030 0%, #A03F22 100%)' }}
-            whileHover={{ scale: 1.02, opacity: 0.9 }}
+            className="px-8 py-4 text-white font-semibold text-base flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl"
+            style={{ background: '#B85538', boxShadow: '0 3px 0 #7A2E14, 0 6px 16px rgba(0,0,0,0.15)' }}
+            whileHover={{ scale: 1.02, y: -1 }}
+            whileTap={{ scale: 0.98, y: 2 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
@@ -57,7 +58,8 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
           <motion.button
             onClick={() => onNavigate('contact')}
             aria-label="Get in Touch"
-            className="px-8 py-4 bg-transparent text-ink border border-ink/20 font-semibold text-sm flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl hover:border-ink/40 transition-colors"
+            className="px-8 py-4 text-ink font-semibold text-base flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl transition-colors"
+            style={{ background: 'rgba(26,23,16,0.06)', border: '1px solid rgba(26,23,16,0.12)' }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >

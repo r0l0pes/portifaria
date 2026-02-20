@@ -17,7 +17,7 @@ const CaseStudyCard: React.FC<{ study: CaseStudy; onClick: () => void }> = ({ st
   return (
     <TiltCard
       onClick={onClick}
-      className="group bg-[#FAF6EE] border border-ink/[0.08] p-6 md:p-8 cursor-pointer relative overflow-hidden flex flex-col h-full rounded-2xl"
+      className="group bg-[#EDE5D5] border border-ink/[0.08] p-6 md:p-8 cursor-pointer relative overflow-hidden flex flex-col h-full rounded-2xl"
       tiltAmount={6}
       scale={1.01}
       initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ const CaseStudyModal = ({ study, onClose, onNext, onPrev }: { study: CaseStudy; 
       className={`fixed inset-0 z-[100] flex justify-center items-end md:items-center p-0 md:p-6 overflow-y-auto transition-all duration-300 ${isVisible ? 'bg-ink/40 backdrop-blur-md' : 'bg-transparent'}`}
       onClick={(e) => e.target === e.currentTarget && handleClose()}
     >
-      <div className={`bg-[#FAF6EE] w-full max-w-6xl border border-ink/[0.08] shadow-2xl relative flex flex-col max-h-[95vh] md:max-h-[90vh] h-full md:h-auto rounded-t-3xl md:rounded-3xl overflow-hidden transition-all duration-300 ease-out ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'}`}>
+      <div className={`bg-cream w-full max-w-6xl border border-ink/[0.08] shadow-2xl relative flex flex-col max-h-[95vh] md:max-h-[90vh] h-full md:h-auto rounded-t-3xl md:rounded-3xl overflow-hidden transition-all duration-300 ease-out ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'}`}>
 
         {/* Floating Navigation Buttons */}
         <div className="absolute top-0 right-0 z-20 p-6 md:p-10 flex gap-2 pointer-events-none">
@@ -185,7 +185,7 @@ const CaseStudyModal = ({ study, onClose, onNext, onPrev }: { study: CaseStudy; 
                   )}
                 </div>
 
-                <div className="bg-sand/40 border border-ink/[0.08] p-6 md:p-8 rounded-2xl">
+                <div className="bg-[#EDE5D5] border border-ink/[0.08] p-6 md:p-8 rounded-2xl">
                   <h4 className="text-xs font-bold text-ink-muted uppercase tracking-widest mb-4 md:mb-6 border-b border-ink/10 pb-2">Lessons Learned</h4>
                   <ul className="space-y-4">
                     {study.lessons.map((lesson, idx) => (
