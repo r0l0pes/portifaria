@@ -15,12 +15,23 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    window.location.href = `mailto:${HERO_DATA.contact.email}?subject=Message from Portfolio - ${name}&body=${message}%0D%0A%0D%0AFrom: ${name} (${email})`;
-    setTimeout(() => setStatus('success'), 1000);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => {
+        setStatus('success');
+        form.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        setStatus('idle');
+      });
+
     logEvent('Contact', 'Send Message', 'Form Submit');
   };
 
@@ -35,7 +46,8 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
+      <input type="hidden" name="form-name" value="contact" />
       <div>
         <label htmlFor="name" className="block text-xs font-medium text-ink-muted mb-1.5">Name</label>
         <input required name="name" type="text" id="name"
@@ -63,8 +75,11 @@ const ContactForm = () => {
         whileTap={{ y: 3, boxShadow: '0 1px 0 #6B2210' }}
         transition={{ type: 'spring', stiffness: 500, damping: 20 }}
       >
-        {status === 'submitting' ? 'Opening Email...' : 'Send Message'}
+        {status === 'submitting' ? 'Sending...' : 'Send Message & Connect'}
       </motion.button>
+      <p className="text-center text-xs text-ink-muted/80 mt-3 pt-1">
+        🔒 I actually read these. No spam, ever.
+      </p>
     </form>
   );
 };
