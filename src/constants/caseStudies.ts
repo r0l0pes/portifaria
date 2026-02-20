@@ -3,8 +3,8 @@ import { CaseStudy } from '@/types';
 export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs1",
-    "category": "Humanitarian Tech Aid - AI Validation & Adoption",
-    "title": "Scaling AI Voice Tech for Low-Literacy Farmers",
+    "category": "AI & Humanitarian Tech",
+    "title": "Generative AI Voice Agent",
     "subtitle": "World Food Programme Innovation Accelerator",
     "role": "Senior Product Manager",
     "summary": "Demonstrated 60% cost efficiency potential for WFP's agricultural outreach by successfully piloting a generative AI voice agent with 5,000 low-literacy farmers in Tanzania. The core challenge was designing for users with zero smartphone literacy and intermittent connectivity. We proved the model viability by identifying field officers as the critical intermediary adoption driver, informing AI strategy across 20+ countries.",
@@ -69,7 +69,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     "id": "cs2",
-    "category": "Automotive B2B - Post-Merger Integration",
+    "category": "B2B E-Commerce",
     "title": "Unifying a B2B E-Commerce Platform Post-Merger",
     "subtitle": "FORVIA HELLA - B2B E-Commerce Platform",
     "role": "Senior Product Manager",
@@ -139,7 +139,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     "id": "cs3",
-    "category": "E-Commerce - Growth & International Expansion",
+    "category": "E-Commerce Expansion",
     "title": "Expanding E-Commerce Operations Across 4 LatAm Markets",
     "subtitle": "Natura & Co (via Accenture) - Multi-Country E-Commerce Platform",
     "role": "Senior Product Manager",
@@ -205,7 +205,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     "id": "cs4",
-    "category": "E-Commerce - Mobile Checkout Optimization",
+    "category": "Mobile Checkout",
     "title": "Boosting Mobile Conversion for a Major Fashion Retailer",
     "subtitle": "C&A Brasil - Fashion E-Commerce Platform",
     "role": "Product Manager -> Senior PM",
@@ -271,7 +271,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     "id": "cs5",
-    "category": "Conversational Commerce - Emerging Tech Strategy",
+    "category": "Conversational Commerce",
     "title": "Building Brazil's First WhatsApp Commerce Platform At Scale",
     "subtitle": "C&A Brasil - WhatsApp Business Strategy",
     "role": "Senior Product Manager (Supporting)",

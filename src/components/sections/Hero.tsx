@@ -37,8 +37,8 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
       <span className="text-terracotta">accelerate revenue.</span>
     </motion.h1>
 
-    <motion.p {...fade(0.16)} className="text-lg md:text-xl text-ink-muted max-w-lg mb-10 leading-relaxed">
-      Senior Growth Product Manager with 8+ years improving conversion, activation, and retention across B2C e-commerce, B2B platforms, and AI products. Based in Berlin.
+    <motion.p {...fade(0.16)} className="text-lg md:text-xl text-ink-muted max-w-lg mb-10 leading-relaxed mx-auto">
+      Senior Product Manager delivering measurable impact across e-commerce, B2B platforms, and AI products.
     </motion.p>
 
     <motion.div {...fade(0.22)} className="flex flex-col sm:flex-row items-center gap-4 mb-16">

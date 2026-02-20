@@ -7,9 +7,19 @@ const AboutContent = () => {
   const [toolsExpanded, setToolsExpanded] = useState(false);
   const [skillsExpanded, setSkillsExpanded] = useState(false);
 
-  const coreSkills = ['Product Discovery', 'A/B Testing', 'AI/ML Products', 'Roadmap Prioritization', 'Post-Merger Integration', 'International Expansion', 'B2B Platforms', 'Stakeholder Management', 'AI Governance', 'APIs', 'Data Platforms', 'Mobile', 'Cloud'];
-  const tools = ['Jira', 'Figma', 'GA4/Amplitude', 'SQL', 'Confluence', 'Miro', 'Notion', 'Linear', 'Productboard', 'Mixpanel', 'Power BI/Tableau', 'Retool', 'Zapier', 'ChatGPT/Claude', 'Claude Code', 'Antigravity', 'Cursor', 'LangChain'];
-  const methodologies = ['Continuous Discovery', 'Jobs-to-be-Done', 'OKRs', 'Experimentation', 'Design Sprints', 'Agile/Scrum'];
+  const coreSkills = [
+    'Product Strategy', 'Experimentation Frameworks', 'Discovery Methods',
+    'Roadmap Prioritization', 'OKRs', 'Stakeholder Alignment', 'Go-to-Market Planning'
+  ];
+  const tools = [
+    'Jira', 'Linear', 'Productboard', 'Notion', 'Zapier', 'n8n', 'Retool', 'Granola',
+    'Figma', 'Claude Code', 'Codex', 'Gemini', 'VS Code', 'Supabase', 'Kilo Code',
+    'REST APIs', 'VTEX E-commerce'
+  ];
+  const methodologies = [
+    'SQL', 'A/B Testing', 'GA4', 'Mixpanel', 'Power BI', 'Tableau',
+    'ChatGPT/Claude/NotebookLM', 'Voice AI', 'Machine Learning Training'
+  ];
 
   return (
     <div className="py-8 md:py-12">
@@ -51,18 +61,18 @@ const AboutContent = () => {
         {/* Download Resume Button */}
         <div className="pt-2">
           <motion.a
-            href="/Resume_Rodrigo-Lopes.tex"
+            href="/Resume_Rodrigo-Lopes.pdf"
             download
-            aria-label="Download CV TeX Source"
+            aria-label="Download Resume PDF"
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold text-sm rounded-xl"
             style={{ background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)', boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)' }}
-            onClick={() => logEvent('Engagement', 'Download CV')}
+            onClick={() => logEvent('Engagement', 'Download Resume')}
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98, y: 2 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
             <Download size={16} />
-            Download CV (.tex)
+            Download Resume
           </motion.a>
         </div>
 
@@ -103,7 +113,7 @@ const AboutContent = () => {
           <div className={`overflow-hidden transition-all duration-300 ease-in-out ${toolsExpanded ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
             <div className="space-y-4 pl-6 border-l-2 border-terracotta/20">
               <div>
-                <h4 className="text-xs font-medium text-ink-muted uppercase tracking-widest mb-2">Tools</h4>
+                <h4 className="text-xs font-medium text-ink-muted uppercase tracking-widest mb-2">Tools & Platforms</h4>
                 <div className="flex flex-wrap gap-2">
                   {tools.map((tool) => (
                     <span key={tool} className="px-2.5 py-1 bg-ink/5 text-ink/70 text-xs font-medium rounded-full">
@@ -113,7 +123,7 @@ const AboutContent = () => {
                 </div>
               </div>
               <div>
-                <h4 className="text-xs font-medium text-ink-muted uppercase tracking-widest mb-2">Methodologies</h4>
+                <h4 className="text-xs font-medium text-ink-muted uppercase tracking-widest mb-2">Analytics & Methods</h4>
                 <div className="flex flex-wrap gap-2">
                   {methodologies.map((method) => (
                     <span key={method} className="px-2.5 py-1 bg-ink/5 text-ink/70 text-xs font-medium rounded-full">
