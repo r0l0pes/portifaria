@@ -43,8 +43,9 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
           <motion.button
             onClick={() => onNavigate('work')}
             aria-label="View Case Studies"
-            className="px-8 py-4 bg-terracotta text-white font-semibold text-sm flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl"
-            whileHover={{ scale: 1.02, backgroundColor: '#A03F22' }}
+            className="px-8 py-4 text-white font-semibold text-sm flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl"
+            style={{ background: 'linear-gradient(160deg, #C05030 0%, #A03F22 100%)' }}
+            whileHover={{ scale: 1.02, opacity: 0.9 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >

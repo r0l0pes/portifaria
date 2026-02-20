@@ -36,17 +36,17 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
       <div>
         <label htmlFor="name" className="block text-xs font-medium text-ink-muted mb-1.5">Name</label>
-        <input required name="name" type="text" id="name" className="w-full bg-white border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="Your name" />
+        <input required name="name" type="text" id="name" className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="Your name" />
       </div>
       <div>
         <label htmlFor="email" className="block text-xs font-medium text-ink-muted mb-1.5">Email</label>
-        <input required name="email" type="email" id="email" className="w-full bg-white border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="your@email.com" />
+        <input required name="email" type="email" id="email" className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="your@email.com" />
       </div>
       <div>
         <label htmlFor="message" className="block text-xs font-medium text-ink-muted mb-1.5">Message</label>
-        <textarea required name="message" id="message" rows={4} className="w-full bg-white border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="How can I help?"></textarea>
+        <textarea required name="message" id="message" rows={4} className="w-full bg-[#FAF6EE] border border-ink/15 p-3 md:p-4 text-ink font-medium focus:outline-none focus:border-terracotta/50 transition-colors rounded-lg text-sm" placeholder="How can I help?"></textarea>
       </div>
-      <button type="submit" disabled={status === 'submitting'} className="w-full py-3.5 md:py-4 bg-terracotta text-white font-semibold hover:bg-terracotta-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm rounded-xl">
+      <button type="submit" disabled={status === 'submitting'} className="w-full py-3.5 md:py-4 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed text-sm rounded-xl" style={{ background: 'linear-gradient(160deg, #C05030 0%, #A03F22 100%)' }}>
         {status === 'submitting' ? 'Preparing Email...' : 'Send Message'}
       </button>
     </form>

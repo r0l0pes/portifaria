@@ -53,9 +53,10 @@ const AboutContent = () => {
             href="/Resume_Rodrigo-Lopes.pdf"
             download
             aria-label="Download Resume PDF"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta text-white font-semibold text-sm rounded-xl"
+            className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold text-sm rounded-xl"
+            style={{ background: 'linear-gradient(160deg, #C05030 0%, #A03F22 100%)' }}
             onClick={() => logEvent('Engagement', 'Download Resume')}
-            whileHover={{ backgroundColor: '#A03F22' }}
+            whileHover={{ opacity: 0.9, scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
