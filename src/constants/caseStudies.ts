@@ -7,7 +7,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Scaling AI Voice Tech for Low-Literacy Farmers",
     "subtitle": "World Food Programme Innovation Accelerator",
     "role": "Senior Product Manager",
-    "summary": "Designed and executed pilot of generative AI voice agent with 5,000 low-literacy farmers in Tanzania to assess delivery model feasibility; demonstrated 60% cost efficiency potential vs. human-led outreach; identified field officers as the critical intermediary adoption driver; informed WFP's AI investment strategy across 20+ country programs.",
+    "summary": "Demonstrated 60% cost efficiency potential for WFP's agricultural outreach by successfully piloting a generative AI voice agent with 5,000 low-literacy farmers in Tanzania. The core challenge was designing for users with zero smartphone literacy and intermittent connectivity. We proved the model viability by identifying field officers as the critical intermediary adoption driver, informing AI strategy across 20+ countries.",
     "challenge": "Standard AI voice interfaces assume reliable connectivity, smartphone literacy, and well-resourced training data. None of these held true for Tanzanian smallholder farmers. The product hypothesis, that generative AI could replace human extension workers, needed validation before WFP committed to scaling. Without defined success metrics, the pilot risked producing anecdotal findings rather than the defensible investment recommendation leadership needed.",
     "approach": [
       {
@@ -73,7 +73,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Unifying a B2B E-Commerce Platform Post-Merger",
     "subtitle": "FORVIA HELLA - B2B E-Commerce Platform",
     "role": "Senior Product Manager",
-    "summary": "Enabled €12M+ Year 1 cross-sell revenue through catalog unification and UX optimization serving 60,000+ workshops following the Faurecia-HELLA merger. Grew digital order share as the platform's North Star Metric.",
+    "summary": "Enabled €12M+ Year 1 cross-sell revenue for 60,000+ workshops following the €400M FORVIA-HELLA merger. The challenge was integrating Faurecia's 15,000+ SKUs into a single-vendor catalog without breaking the existing search and checkout experience. We drove adoption by establishing digital order share as the North Star Metric and redesigning the multi-item checkout flow.",
     "challenge": "HELLA Partner World operated as a single-vendor catalog optimized for lighting and electronics products. Post-merger, three core challenges emerged: integrating Faurecia's 15,000+ SKUs without degrading search/navigation; commercial misalignment with cross-functional stakeholders operating in silos with conflicting priorities; and UX debt in checkout flows optimized for single-vendor ordering that created friction for multi-item, cross-brand purchases.",
     "approach": [
       {
@@ -143,7 +143,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Expanding E-Commerce Operations Across 4 LatAm Markets",
     "subtitle": "Natura & Co (via Accenture) - Multi-Country E-Commerce Platform",
     "role": "Senior Product Manager",
-    "summary": "Embedded as Senior PM within Accenture Brasil's delivery team for Natura & Co. Managed Brazil e-commerce checkout optimization (+45% conversion) and expanded the platform across 4 LatAm markets in 6 months, coordinating a 50+ person distributed team. Optimized for Natura's social commerce model, where consultant-shared links were the primary acquisition path.",
+    "summary": "Drove a 45% increase in checkout conversion for Natura Brazil and expanded the platform across 4 LatAm markets in just 6 months. The challenge was optimizing for a unique social commerce model where consultant-shared links were the primary acquisition path, requiring localized payment methods across all countries. We achieved rapid scale by standardizing a rollout playbook across a 50+ person distributed team.",
     "challenge": "Brazil's e-commerce checkout suffered from 70%+ abandonment due to complex address entry and fragmented payment preferences. A key nuance: Natura's acquisition model relied on beauty consultants sharing product links directly with customers, meaning checkout optimization had to account for the full social commerce funnel. Phase 2 required expanding to LatAm markets with distinct localization requirements while maintaining an aggressive 6-month timeline.",
     "approach": [
       {
@@ -209,7 +209,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Boosting Mobile Conversion for a Major Fashion Retailer",
     "subtitle": "C&A Brasil - Fashion E-Commerce Platform",
     "role": "Product Manager -> Senior PM",
-    "summary": "Joined C&A Brasil (R$7B revenue, 280+ stores) as the most junior PM. Over 18 months, redesigned mobile checkout, expanded payment methods, and ran 15+ A/B tests, achieving +28% conversion and -18% abandonment. Promoted to Senior PM based on measurable impact.",
+    "summary": "Achieved +28% checkout conversion and -18% cart abandonment for C&A's mobile e-commerce platform. The primary barrier was systemic: displaying lump-sum prices to a user base where 70% relied on instalment payments and credit card penetration was under 50%. We fixed this by repositioning instalment pricing as the default display format alongside a streamlined mobile-first checkout.",
     "challenge": "Mobile checkout abandonment sat at 70–75% on a platform serving 80%+ mobile traffic. Beyond form friction and poor multi-item cart UX, the core payment barrier was systemic: over 70% of Brazilian e-commerce purchases used instalment plans and card penetration was below 50%, meaning a checkout showing only lump-sum, card-only options was filtering out a significant share of shoppers before they could buy.",
     "approach": [
       {
@@ -275,7 +275,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Building Brazil's First WhatsApp Commerce Platform At Scale",
     "subtitle": "C&A Brasil - WhatsApp Business Strategy",
     "role": "Senior Product Manager (Supporting)",
-    "summary": "As Senior PM, supported the preparation for C&A's WhatsApp Business pilot (launched H1 2020). While Sales/Commercial owned revenue execution, I established the product foundations: technical feasibility assessment (VTEX integration), metrics framework (conversation-to-conversion, associate efficiency), and associate workflow design. This foundation enabled the channel to scale to R$1.17B GMV by 2022 (>50% of digital sales), validating the human-led conversational commerce model in Brazil.",
+    "summary": "Enabled a new WhatsApp commerce channel that eventually scaled to R$1.17B GMV by 2022, accounting for >50% of C&A's digital sales. The challenge was launching quickly to validate human-led conversational commerce without waiting for complex native integrations into the VTEX legacy platform. We established the product foundations through clear operational metrics and workflow design for 800+ store associates.",
     "challenge": "In late 2019, WhatsApp was Brazil's dominant app, but no fashion retailer had scaled it as a sales channel. The Sales team wanted a feature-rich launch (AI chatbots, personalization) immediately, but the e-commerce platform (VTEX) lacked native integration. The challenge was defining a technically feasible MVP that could launch quickly to validate the hypothesis (human-led sales) without getting bogged down in unproven AI complexity.",
     "approach": [
       {
