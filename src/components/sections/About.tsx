@@ -14,7 +14,7 @@ const AboutContent = () => {
   return (
     <div className="py-8 md:py-12">
       <div className="flex justify-between items-end mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-4xl font-black text-ink font-display">About</h2>
+        <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display">About</h2>
       </div>
 
       <div className="max-w-4xl space-y-8">

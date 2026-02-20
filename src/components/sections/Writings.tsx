@@ -7,7 +7,7 @@ const BlogContent = () => {
     <div>
       <div className="flex justify-between items-end mb-10 md:mb-14">
         <div>
-          <h2 className="text-3xl md:text-4xl font-black text-ink font-display mb-2">Writing</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display mb-2">Writing</h2>
           <p className="text-ink-muted text-sm md:text-base">
             Product strategy, emerging tech, and lessons learned. Published on{' '}
             <a
@@ -24,7 +24,7 @@ const BlogContent = () => {
       </div>
 
       <div className="divide-y divide-ink/[0.06]">
-        {BLOG_POSTS.map((post) => (
+        {BLOG_POSTS.slice(0, 5).map((post) => (
           <a
             key={post.id}
             href={`https://substack.com/@rodrigolopes`}

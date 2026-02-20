@@ -58,7 +58,7 @@ const FooterContent = () => (
     <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
       {/* Left Column */}
       <div className="text-left order-2 md:order-1">
-        <h2 className="text-4xl md:text-6xl font-black text-ink font-display mb-4 md:mb-6 leading-none">Let's Talk</h2>
+        <h2 className="text-4xl md:text-6xl font-black text-terracotta font-display mb-4 md:mb-6 leading-none">Let's Talk</h2>
         <p className="text-ink-muted mb-6 md:mb-8 text-base md:text-lg max-w-md">
           I'm open to new opportunities.
         </p>

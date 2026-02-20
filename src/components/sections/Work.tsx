@@ -219,7 +219,7 @@ const WorkSection = ({ onStudyClick }: { onStudyClick: (study: CaseStudy) => voi
   return (
     <div ref={ref}>
       <div className={`flex justify-between items-end mb-12 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <h2 className="text-3xl md:text-4xl font-black text-ink font-display">Selected Work</h2>
+        <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display">Selected Work</h2>
         <div className="hidden md:block text-ink-muted text-xs font-medium uppercase tracking-widest">
           Case Studies
         </div>

@@ -23,7 +23,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
             To
             <span className="relative inline-block ml-4 md:ml-8">
               <span className="absolute inset-0 bg-amber/20 rounded-lg skew-x-1"></span>
-              <span className="relative z-10 px-4 md:px-6 text-ink">Impact.</span>
+              <span className="relative z-10 px-4 md:px-6 text-terracotta">Impact.</span>
             </span>
           </span>
         </h1>
