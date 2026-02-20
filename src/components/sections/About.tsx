@@ -51,9 +51,9 @@ const AboutContent = () => {
         {/* Download Resume Button */}
         <div className="pt-2">
           <motion.a
-            href="/Resume_Rodrigo-Lopes.pdf"
+            href="/Resume_Rodrigo-Lopes.tex"
             download
-            aria-label="Download CV PDF"
+            aria-label="Download CV TeX Source"
             className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold text-sm rounded-xl"
             style={{ background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)', boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)' }}
             onClick={() => logEvent('Engagement', 'Download CV')}
@@ -62,7 +62,7 @@ const AboutContent = () => {
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
             <Download size={16} />
-            Download CV
+            Download CV (.tex)
           </motion.a>
         </div>
 
