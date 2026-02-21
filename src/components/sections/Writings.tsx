@@ -11,7 +11,7 @@ const BlogContent = () => (
         <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display mb-2">Writing</h2>
         <p className="text-ink-muted text-sm md:text-base">
           Product strategy, emerging tech, and lessons learned. Published on{' '}
-          <a href="https://substack.com/@rodrigolopes" target="_blank" rel="noreferrer" className="text-terracotta hover:underline">
+          <a href="https://substack.com/@r0l0pes" target="_blank" rel="noreferrer" className="text-terracotta hover:underline">
             Substack
           </a>.
         </p>
@@ -22,7 +22,7 @@ const BlogContent = () => (
       {BLOG_POSTS.slice(0, 5).map((post, i) => (
         <BlurFade key={post.id} delay={0.2 + i * 0.1} yOffset={10}>
           <motion.a
-            href="https://substack.com/@rodrigolopes"
+            href="https://substack.com/@r0l0pes"
             target="_blank"
             rel="noreferrer"
             className="group flex items-center justify-between gap-4 py-5 -mx-4 px-4 rounded-xl transition-colors relative"

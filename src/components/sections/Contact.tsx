@@ -39,11 +39,24 @@ const ContactForm = () => {
 
   if (status === 'success') {
     return (
-      <div className="bg-terracotta/10 border border-terracotta/30 p-6 text-center rounded-2xl">
-        <h3 className="text-lg font-bold text-ink mb-2">Opening Email...</h3>
-        <p className="text-ink-muted mb-4 text-sm">Check your email client to send the message.</p>
-        <button onClick={() => setStatus('idle')} className="text-xs font-medium text-terracotta underline">Send another</button>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-terracotta/5 border border-terracotta/20 p-8 text-center rounded-2xl"
+      >
+        <div className="w-12 h-12 bg-terracotta/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10, delay: 0.2 }}
+          >
+            <Mail className="text-terracotta" size={24} />
+          </motion.div>
+        </div>
+        <h3 className="text-xl font-bold text-ink mb-2">Message Sent!</h3>
+        <p className="text-ink-muted mb-6 text-base">Thanks for reaching out, Rodrigo. I'll get back to you personally within 24 hours.</p>
+        <button onClick={() => setStatus('idle')} className="text-sm font-semibold text-terracotta hover:underline transition-all">Send another message</button>
+      </motion.div>
     );
   }
 
