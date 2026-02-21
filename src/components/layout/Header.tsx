@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
 
 const BTN_STYLE = {
@@ -11,13 +11,25 @@ const BTN_STYLE = {
 const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   const { navigate } = useApp();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() || 0;
+
+    // Check if scrolled past threshold for background change
+    if (latest > 20) setIsScrolled(true);
+    else setIsScrolled(false);
+
+    // Hide header entirely if scrolling down, show if scrolling up
+    if (latest > 150 && latest > previous) {
+      setHidden(true);
+      setMobileMenuOpen(false); // Close mobile menu if open while scrolling down
+    } else {
+      setHidden(false);
+    }
+  });
 
   const navLinks = [
     { name: 'About', id: 'about' },
@@ -31,7 +43,15 @@ const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-cream/90 backdrop-blur-md border-b border-ink/[0.06] py-3 md:py-4' : 'bg-cream py-4 md:py-6'}`}>
+    <motion.nav
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" }
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-cream/90 backdrop-blur-md border-b border-ink/[0.06] py-3 md:py-4 shadow-sm' : 'bg-cream/0 py-4 md:py-6'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
         <div
           className="text-xl font-black tracking-tighter text-ink cursor-pointer font-display"
@@ -93,7 +113,7 @@ const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
           </button>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

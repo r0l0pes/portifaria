@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { HERO_DATA } from '@/constants';
 import { logEvent } from '../../components/Analytics';
+import { BlurFade } from '../ui/BlurFade';
+import { ShinyButton } from '../ui/ShinyButton';
 
 const BTN = {
   background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)',
@@ -66,17 +68,13 @@ const ContactForm = () => {
           className="w-full bg-[#EDE7D9] border border-ink/10 p-3.5 text-ink font-medium focus:outline-none focus:border-terracotta/50 focus:ring-2 focus:ring-terracotta/10 transition-all rounded-xl text-sm"
           placeholder="What are you working on?" />
       </div>
-      <motion.button
+      <ShinyButton
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full py-4 text-white font-semibold text-sm rounded-xl disabled:opacity-50"
-        style={BTN}
-        whileHover={{ y: -1, boxShadow: '0 6px 0 #6B2210, 0 12px 24px rgba(0,0,0,0.15)' }}
-        whileTap={{ y: 3, boxShadow: '0 1px 0 #6B2210' }}
-        transition={{ type: 'spring', stiffness: 500, damping: 20 }}
+        className="w-full"
       >
         {status === 'submitting' ? 'Sending...' : 'Send Message & Connect'}
-      </motion.button>
+      </ShinyButton>
       <p className="text-center text-xs text-ink-muted/80 mt-3 pt-1">
         🔒 I actually read these. No spam, ever.
       </p>
@@ -87,48 +85,38 @@ const ContactForm = () => {
 const socialLinks = [
   { key: 'linkedin', Icon: Linkedin, label: 'LinkedIn', getHref: () => `https://${HERO_DATA.contact.linkedin}`, event: 'Click LinkedIn' },
   { key: 'github', Icon: Github, label: 'GitHub', getHref: () => `https://${HERO_DATA.contact.github}`, event: 'Click GitHub' },
+  { key: 'substack', Icon: BookOpen, label: 'Substack', getHref: () => `https://substack.com/@r0l0pes`, event: 'Click Substack' },
 ];
 
 const FooterContent = () => (
-  <div className="max-w-2xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-black text-terracotta font-display mb-3 leading-none">Let's Talk</h2>
-    <p className="text-ink-muted mb-8 text-base max-w-sm">
-      Open to Senior and Group PM roles. I respond within 24 hours.
-    </p>
+  <BlurFade yOffset={10}>
+    <div className="max-w-2xl mx-auto">
+      <h2 className="text-4xl md:text-5xl font-black text-terracotta font-display mb-10 leading-none">Let's Talk</h2>
 
-    <a
-      href={`mailto:${HERO_DATA.contact.email}`}
-      className="inline-flex items-center gap-3 text-ink text-base font-semibold hover:text-terracotta transition-colors mb-8 group"
-    >
-      <Mail size={18} className="text-terracotta" />
-      <span className="underline underline-offset-4 decoration-ink/20 group-hover:decoration-terracotta transition-all">
-        {HERO_DATA.contact.email}
-      </span>
-    </a>
+      <div className="flex gap-3 mb-12 flex-wrap">
+        {socialLinks.map(({ key, Icon, label, getHref, event }) => (
+          <a key={key} href={getHref()} target="_blank" rel="noreferrer" onClick={() => logEvent('Social', event)}>
+            <motion.div
+              className="flex items-center gap-2.5 px-4 py-2.5 bg-[#EDE7D9] border border-ink/[0.08] rounded-xl text-ink-muted text-sm font-medium"
+              whileHover={{ backgroundColor: '#B85538', color: '#ffffff', y: -2, boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}
+              whileTap={{ y: 1 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            >
+              <Icon size={16} />
+              {label}
+            </motion.div>
+          </a>
+        ))}
+      </div>
 
-    <div className="flex gap-3 mb-12">
-      {socialLinks.map(({ key, Icon, label, getHref, event }) => (
-        <a key={key} href={getHref()} target="_blank" rel="noreferrer" onClick={() => logEvent('Social', event)}>
-          <motion.div
-            className="flex items-center gap-2.5 px-4 py-2.5 bg-[#EDE7D9] border border-ink/[0.08] rounded-xl text-ink-muted text-sm font-medium"
-            whileHover={{ backgroundColor: '#B85538', color: '#ffffff', y: -2, boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}
-            whileTap={{ y: 1 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-          >
-            <Icon size={16} />
-            {label}
-          </motion.div>
-        </a>
-      ))}
+      <ContactForm />
+
+      <div className="mt-16 pt-8 border-t border-ink/[0.08] flex justify-between items-center text-ink-muted text-xs">
+        <span>&copy; {new Date().getFullYear()} Rodrigo Lopes</span>
+        <span>Built with React</span>
+      </div>
     </div>
-
-    <ContactForm />
-
-    <div className="mt-16 pt-8 border-t border-ink/[0.08] flex justify-between items-center text-ink-muted text-xs">
-      <span>&copy; {new Date().getFullYear()} Rodrigo Lopes</span>
-      <span>Built with React</span>
-    </div>
-  </div>
+  </BlurFade>
 );
 
 export { ContactForm, FooterContent };

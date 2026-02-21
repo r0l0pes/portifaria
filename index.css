@@ -21,9 +21,27 @@
   --scrollbar-hover: #A03F22;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   background-color: #F5E9D0;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.045;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(120%) brightness(120%);
 }
 
 /* Subtle graph-paper texture on the page background */

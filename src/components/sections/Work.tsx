@@ -3,6 +3,7 @@ import { ArrowRight, Globe, BarChart3, ShieldCheck, Database, Brain, X, ChevronR
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { TiltCard } from '../animations/TiltCard';
+import { BlurFade } from '../ui/BlurFade';
 import { CASE_STUDIES } from '@/constants';
 import { CaseStudy } from '@/types';
 import { logEvent } from '../../components/Analytics';
@@ -218,20 +219,18 @@ const WorkSection = ({ onStudyClick }: { onStudyClick: (study: CaseStudy) => voi
 
   return (
     <div ref={ref}>
-      <div className={`flex justify-between items-end mb-12 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display">Selected Work</h2>
-        <div className="hidden md:block text-ink-muted text-xs font-medium uppercase tracking-widest">
-          Case Studies
+      <BlurFade delay={0.1} yOffset={25}>
+        <div className="flex justify-between items-end mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display">Selected Work</h2>
+          <div className="hidden md:block text-ink-muted text-xs font-medium uppercase tracking-widest">
+            Case Studies
+          </div>
         </div>
-      </div>
+      </BlurFade>
 
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         {CASE_STUDIES.map((study, index) => (
-          <div
-            key={study.id}
-            className={`transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            style={{ transitionDelay: isInView ? `${(index + 1) * 100}ms` : '0ms' }}
-          >
+          <BlurFade key={study.id} delay={0.2 + index * 0.15} yOffset={30}>
             <CaseStudyCard
               study={study}
               onClick={() => {
@@ -239,7 +238,7 @@ const WorkSection = ({ onStudyClick }: { onStudyClick: (study: CaseStudy) => voi
                 onStudyClick(study);
               }}
             />
-          </div>
+          </BlurFade>
         ))}
       </div>
     </div>
