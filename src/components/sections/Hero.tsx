@@ -24,7 +24,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
   const opacityHero = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center text-center min-h-[90vh] py-12 md:py-20 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center text-center min-h-[70vh] md:min-h-[75vh] pt-4 pb-12 md:pb-16 overflow-hidden">
 
       <AnimatedGridPattern
         numSquares={60}
@@ -42,7 +42,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
           {...fade(0)}
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
-          className="mb-8 md:mb-10 inline-block cursor-default"
+          className="mb-6 md:mb-8 inline-block cursor-default"
         >
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-terracotta/40 to-amber-500/40 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-500 group-hover:duration-200"></div>
@@ -58,7 +58,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
 
         <motion.h1
           {...fade(0.08)}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-[6rem] font-black font-display text-ink tracking-tight leading-[1.0] mb-6 md:mb-8 max-w-5xl mx-auto"
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-[6rem] font-black font-display text-ink tracking-tight leading-[1.0] mb-4 md:mb-6 max-w-5xl mx-auto"
         >
           {"Experiments that ".split(" ").map((word, i) => (
             <motion.span
@@ -87,11 +87,11 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
           </span>
         </motion.h1>
 
-        <motion.p {...fade(0.16)} className="text-lg md:text-xl lg:text-[1.35rem] text-ink-muted w-full max-w-5xl mb-10 leading-relaxed mx-auto">
+        <motion.p {...fade(0.16)} className="text-lg md:text-xl lg:text-[1.3rem] text-ink-muted w-full max-w-5xl mb-8 leading-relaxed mx-auto">
           Delivering measurable impact across e-commerce, B2B platforms, and AI products.
         </motion.p>
 
-        <motion.div {...fade(0.22)} className="flex flex-col sm:flex-row items-center gap-4 mb-20">
+        <motion.div {...fade(0.22)} className="flex flex-col sm:flex-row items-center gap-4 mb-12 md:mb-16">
           <ShinyButton
             onClick={() => onNavigate('work')}
           >
@@ -107,7 +107,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
 
         <motion.div
           {...fade(0.35)}
-          className="w-full max-w-7xl px-4 mt-8 opacity-40 hover:opacity-100 transition-opacity duration-700 h-10 flex items-center overflow-hidden"
+          className="w-full max-w-7xl px-4 mt-0 opacity-40 hover:opacity-100 transition-opacity duration-700 h-10 flex items-center overflow-hidden"
         >
           <Marquee
             items={["WFP", "FORVIA HELLA", "Accenture", "Natura", "C&A", "Berlin", "Senior Growth PM", "8+ Years Experience", "A/B Testing", "AI Governance"]}
