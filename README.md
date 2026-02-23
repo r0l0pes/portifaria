@@ -41,43 +41,28 @@ To preview the production build locally:
 npm run preview
 ```
 
-## Deploy to Netlify
+## Deploy to Vercel
 
-### Option 1: Deploy via Netlify CLI
+### Option 1: Automatic Deploys (Recommended)
 
-1. Install Netlify CLI:
-   ```bash
-   npm install -g netlify-cli
-   ```
+1. Push your code to GitHub.
+2. Connect your repository to Vercel via the [Vercel Dashboard](https://vercel.com/new).
+3. Vercel will auto-detect settings from `vercel.json`.
 
-2. Build and deploy:
-   ```bash
-   npm run build
-   netlify deploy --prod
-   ```
+### Option 2: Deploy via Vercel CLI
 
-### Option 2: Deploy via Git
-
-1. Push your code to GitHub/GitLab/Bitbucket
-2. Connect your repository to Netlify
-3. Netlify will auto-detect the build settings from `netlify.toml`
-
-Build settings (already configured in `netlify.toml`):
-- **Build command:** `npm run build`
-- **Publish directory:** `dist`
+```bash
+npx vercel --prod
+```
 
 ## Project Structure
 
 ```
 ├── App.tsx              # Main application component
 ├── index.tsx            # Application entry point
-├── types.ts             # TypeScript type definitions
-├── constants.ts         # Portfolio content data
-├── index.html           # HTML template
-├── vite.config.ts       # Vite configuration
-├── netlify.toml         # Netlify deployment config
-└── public/
-    └── _redirects       # SPA routing fallback
+├── vercel.json          # Vercel deployment config
+├── src/                 # Source code
+└── public/              # Static assets
 ```
 
 ## Technology Stack

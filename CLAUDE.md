@@ -50,9 +50,11 @@ Notion is the source of truth for content. When updating case studies or blog po
 
 Note: the Hero section is hardcoded in `src/components/sections/Hero.tsx` and does not consume `src/constants/hero.ts`.
 
-## Deployment
-
-Deployed on Netlify. Pushing to `main` triggers auto-deploy. SPA routing is handled by the `/*` → `/index.html` redirect in `netlify.toml`.
+### Deployment & CI/CD
+- Deployed on **Vercel**.
+- Pushing to `main` triggers auto-deploy via GitHub integration.
+- SPA routing fallback is handled in `vercel.json` (rewrites).
+- Domain: `rodrigolopes.eu` (managed at Gandi, nameservers pointed to Vercel).
 
 ## Prompt Caching (LLM API Patterns)
 
