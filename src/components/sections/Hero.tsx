@@ -20,11 +20,11 @@ const BTN = {
 
 const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   const { scrollY } = useScroll();
-  const yHero = useTransform(scrollY, [0, 500], [0, 150]);
+  const yHero = useTransform(scrollY, [0, 500], [0, 80]);
   const opacityHero = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center text-center min-h-[80vh] py-16 md:py-24 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center text-center min-h-[90vh] py-12 md:py-20 overflow-hidden">
 
       <AnimatedGridPattern
         numSquares={60}
@@ -36,13 +36,13 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
 
       <motion.div
         style={{ y: yHero, opacity: opacityHero }}
-        className="relative z-10 flex flex-col items-center"
+        className="relative z-10 flex flex-col items-center w-full px-6 md:px-12"
       >
         <motion.div
           {...fade(0)}
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
-          className="mb-10 inline-block cursor-default"
+          className="mb-8 md:mb-10 inline-block cursor-default"
         >
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-terracotta/40 to-amber-500/40 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-500 group-hover:duration-200"></div>
@@ -58,7 +58,7 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
 
         <motion.h1
           {...fade(0.08)}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-[6rem] font-black font-display text-ink tracking-tight leading-[1.0] mb-8 max-w-4xl"
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-[6rem] font-black font-display text-ink tracking-tight leading-[1.0] mb-6 md:mb-8 max-w-5xl mx-auto"
         >
           {"Experiments that ".split(" ").map((word, i) => (
             <motion.span
@@ -87,8 +87,8 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
           </span>
         </motion.h1>
 
-        <motion.p {...fade(0.16)} className="text-lg md:text-xl text-ink-muted w-full max-w-[850px] mb-10 leading-relaxed mx-auto">
-          Senior Growth Product Manager delivering measurable impact across e-commerce, B2B platforms, and AI products.
+        <motion.p {...fade(0.16)} className="text-lg md:text-xl lg:text-[1.35rem] text-ink-muted w-full max-w-5xl mb-10 leading-relaxed mx-auto">
+          Delivering measurable impact across e-commerce, B2B platforms, and AI products.
         </motion.p>
 
         <motion.div {...fade(0.22)} className="flex flex-col sm:flex-row items-center gap-4 mb-20">

@@ -148,7 +148,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "approach": [
       {
         "title": "Data-Driven Experimentation",
-        "description": "Conducted comprehensive funnel analysis and heatmaps. Ran 15+ A/B tests on simplified checkout flows, Google Maps address autocomplete, and expanded payment methods (Pix, Mercado Pago, Buy Now Pay Later)."
+        "description": "Conducted comprehensive funnel analysis and heatmaps. Ran 37+ A/B tests on simplified checkout flows, Google Maps address autocomplete, and expanded payment methods (Pix, Mercado Pago, Buy Now Pay Later)."
       },
       {
         "title": "Playbook Development",
