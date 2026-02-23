@@ -57,7 +57,7 @@ const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
           className="text-xl font-black tracking-tighter text-ink cursor-pointer font-display"
           onClick={() => handleNavClick('hero')}
         >
-          rlopes
+          rodrigolopes
         </div>
 
         {/* Desktop Nav */}
