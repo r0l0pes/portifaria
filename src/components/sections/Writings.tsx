@@ -30,9 +30,6 @@ const BlogContent = () => (
             transition={{ type: 'spring', stiffness: 400, damping: 28 }}
           >
             <div className="min-w-0 flex items-center gap-5">
-              <span className="text-sm font-bold text-terracotta/40 font-display tabular-nums shrink-0">
-                {String(i + 1).padStart(2, '0')}
-              </span>
               <div>
                 <div className="text-xs text-ink-muted mb-1">{post.date} · {post.readTime}</div>
                 <div className="text-base md:text-lg font-semibold text-ink group-hover:text-terracotta transition-colors leading-snug">

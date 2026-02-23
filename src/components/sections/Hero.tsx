@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { AnimatedGridPattern } from '@/components/ui/AnimatedGridPattern';
 import { ShinyButton } from '@/components/ui/ShinyButton';
-import { Marquee } from '@/components/ui/Marquee';
+import { LogoMarquee } from '@/components/ui/LogoMarquee';
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -16,15 +16,25 @@ const BTN = {
   boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)',
 };
 
+const logos = [
+  { src: '/images/logos/raw/natura.png', alt: 'Natura', className: 'md:h-12' },
+  { src: '/images/logos/raw/wfp.png', alt: 'World Food Programme', className: 'md:h-14' },
+  { src: '/images/logos/raw/hella.png', alt: 'Forvia Hella', className: 'md:h-11' },
+  { src: '/images/logos/raw/ca.png', alt: 'C&A', className: 'md:h-9' }, // Bolder marks need less scale
+  { src: '/images/logos/raw/accenture.png', alt: 'Accenture', className: 'md:h-8' }, // Bolder marks need less scale
+];
 
+interface HeroProps {
+  onNavigate: (section: string) => void;
+}
 
-const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
+export const HeroContent: React.FC<HeroProps> = ({ onNavigate }) => {
   const { scrollY } = useScroll();
   const yHero = useTransform(scrollY, [0, 500], [0, 80]);
   const opacityHero = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center text-center min-h-[70vh] md:min-h-[75vh] pt-4 pb-12 md:pb-16 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center text-center min-h-[70vh] md:min-h-[75vh] pt-0 pb-12 md:pb-16 overflow-hidden">
 
       <AnimatedGridPattern
         numSquares={60}
@@ -107,19 +117,14 @@ const HeroContent = ({ onNavigate }: { onNavigate: (section: string) => void }) 
 
         <motion.div
           {...fade(0.35)}
-          className="w-full max-w-7xl px-4 mt-0 opacity-40 hover:opacity-100 transition-opacity duration-700 h-10 flex items-center overflow-hidden"
+          className="w-full max-w-7xl px-4 mt-0 opacity-100 transition-opacity duration-700 flex items-center overflow-hidden"
         >
-          <Marquee
-            items={["WFP", "FORVIA HELLA", "Accenture", "Natura", "C&A", "Berlin", "Senior Growth PM", "8+ Years Experience", "A/B Testing", "AI Governance"]}
+          <LogoMarquee
+            logos={logos}
             speed={60}
           />
         </motion.div>
-
-
-
       </motion.div>
     </div>
   );
 };
-
-export { HeroContent };
