@@ -18,9 +18,9 @@ const App = () => {
   const [activeStudy, setActiveStudy] = useState<CaseStudy | null>(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
-      const studyId = params.get('study');
-      if (studyId) {
-        return CASE_STUDIES.find(s => s.id === studyId) || null;
+      const studySlug = params.get('study');
+      if (studySlug) {
+        return CASE_STUDIES.find(s => s.slug === studySlug) || null;
       }
     }
     return null;
@@ -29,9 +29,9 @@ const App = () => {
   useEffect(() => {
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search);
-      const studyId = params.get('study');
-      if (studyId) {
-        setActiveStudy(CASE_STUDIES.find(s => s.id === studyId) || null);
+      const studySlug = params.get('study');
+      if (studySlug) {
+        setActiveStudy(CASE_STUDIES.find(s => s.slug === studySlug) || null);
       } else {
         setActiveStudy(null);
       }
@@ -42,15 +42,15 @@ const App = () => {
 
   useEffect(() => {
     const url = new URL(window.location.href);
-    const currentStudyId = url.searchParams.get('study');
+    const currentStudySlug = url.searchParams.get('study');
 
     if (activeStudy) {
-      if (currentStudyId !== activeStudy.id) {
-        url.searchParams.set('study', activeStudy.id);
-        window.history.pushState({ studyId: activeStudy.id }, '', url.toString());
+      if (currentStudySlug !== activeStudy.slug) {
+        url.searchParams.set('study', activeStudy.slug);
+        window.history.pushState({ studySlug: activeStudy.slug }, '', url.toString());
       }
     } else {
-      if (currentStudyId) {
+      if (currentStudySlug) {
         url.searchParams.delete('study');
         window.history.pushState({}, '', url.toString());
       }

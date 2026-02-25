@@ -65,7 +65,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "title": "Field Reality Over Digital Metrics",
         "description": "Initial adoption tracking relied too heavily on digital metrics; pivoted to qualitative field surveys which produced more honest assessments."
       }
-    ]
+    ],
+    "slug": "ai-voice-agent-farmers"
   },
   {
     "id": "cs2",
@@ -135,7 +136,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "title": "Earlier User Research Saves Rework",
         "description": "Conducted workshop interviews in Month 4 (mid-project); earlier research in Month 1 would have informed catalog taxonomy decisions and avoided rework on search/filter architecture."
       }
-    ]
+    ],
+    "slug": "unifying-b2b-ecommerce-forvia"
   },
   {
     "id": "cs3",
@@ -201,7 +203,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "title": "Feature Parity Thresholds Prevent Perfectionism",
         "description": "Accepting 90% feature parity (vs. 100%) allowed faster market entry while deferring edge cases to post-launch iterations. Diminishing returns beyond 90% would have delayed launches without proportional business value."
       }
-    ]
+    ],
+    "slug": "expanding-e-commerce-latam"
   },
   {
     "id": "cs4",
@@ -267,7 +270,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "title": "Stakeholder Negotiation Protects Long-Term Wins",
         "description": "Pushed back on marketing's request for email capture at cart stage. Negotiated post-purchase email capture instead, protecting conversion funnel while still meeting marketing's needs."
       }
-    ]
+    ],
+    "slug": "boosting-mobile-conversion-ca"
   },
   {
     "id": "cs5",
@@ -337,6 +341,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "title": "Timing is Strategic",
         "description": "Launching the pilot prep in late 2019 seemed early, but it meant C&A was ready when the market shifted in 2020. Strategic foresight in product often looks like 'too early' until it's suddenly 'just in time'."
       }
-    ]
+    ],
+    "slug": "whatsapp-commerce-brazil"
   }
 ];

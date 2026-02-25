@@ -26,7 +26,7 @@ const CaseStudyCard: React.FC<{ study: CaseStudy; onClick: () => void }> = ({ st
 
   return (
     <TiltCard
-      href={`?study=${study.id}`}
+      href={`?study=${study.slug}`}
       onClick={handleClick}
       className="group bg-[#EDE5D5] border border-ink/[0.08] p-6 md:p-8 cursor-pointer relative overflow-hidden flex flex-col h-full rounded-2xl no-underline"
       tiltAmount={6}
@@ -230,9 +230,9 @@ const WorkSection = ({ onStudyClick }: { onStudyClick: (study: CaseStudy) => voi
   return (
     <div ref={ref}>
       <BlurFade delay={0.1} yOffset={25}>
-        <div className="flex justify-between items-end mb-12 md:mb-16">
+        <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-black text-terracotta font-display">Selected Work</h2>
-          <div className="hidden md:block text-ink-muted text-xs font-medium uppercase tracking-widest">
+          <div className="text-ink-muted text-xs font-medium uppercase tracking-widest mt-2 border-l-2 border-terracotta/30 pl-3">
             Case Studies
           </div>
         </div>

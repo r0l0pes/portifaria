@@ -9,6 +9,7 @@ export interface Metric {
 /** Full case study with challenge, approach, outcomes, and lessons. */
 export interface CaseStudy {
   id: string;
+  slug: string;
   title: string;
   subtitle: string;
   category: string;
