@@ -15,10 +15,20 @@ const CaseStudyCard: React.FC<{ study: CaseStudy; onClick: () => void }> = ({ st
       study.category.includes('Fintech') ? ShieldCheck :
         study.category.includes('Urban') ? Database : Brain;
 
+  const handleClick = (e: React.MouseEvent) => {
+    // If it's a left click without modifier keys, prevent the default navigation and open the modal
+    if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      onClick();
+    }
+    // Middle clicks, ctrl/cmd + clicks will behave as standard browser link behavior
+  };
+
   return (
     <TiltCard
-      onClick={onClick}
-      className="group bg-[#EDE5D5] border border-ink/[0.08] p-6 md:p-8 cursor-pointer relative overflow-hidden flex flex-col h-full rounded-2xl"
+      href={`?study=${study.id}`}
+      onClick={handleClick}
+      className="group bg-[#EDE5D5] border border-ink/[0.08] p-6 md:p-8 cursor-pointer relative overflow-hidden flex flex-col h-full rounded-2xl no-underline"
       tiltAmount={6}
       scale={1.01}
       initial={{ opacity: 0, y: 20 }}

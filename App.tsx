@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { CASE_STUDIES } from '@/constants';
 import { CaseStudy } from '@/types';
 import { ScrollProgress } from './src/components/ui/ScrollProgress';
@@ -15,7 +15,47 @@ import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
 import { useApp } from '@/context/AppContext';
 
 const App = () => {
-  const [activeStudy, setActiveStudy] = useState<CaseStudy | null>(null);
+  const [activeStudy, setActiveStudy] = useState<CaseStudy | null>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const studyId = params.get('study');
+      if (studyId) {
+        return CASE_STUDIES.find(s => s.id === studyId) || null;
+      }
+    }
+    return null;
+  });
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const studyId = params.get('study');
+      if (studyId) {
+        setActiveStudy(CASE_STUDIES.find(s => s.id === studyId) || null);
+      } else {
+        setActiveStudy(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const currentStudyId = url.searchParams.get('study');
+
+    if (activeStudy) {
+      if (currentStudyId !== activeStudy.id) {
+        url.searchParams.set('study', activeStudy.id);
+        window.history.pushState({ studyId: activeStudy.id }, '', url.toString());
+      }
+    } else {
+      if (currentStudyId) {
+        url.searchParams.delete('study');
+        window.history.pushState({}, '', url.toString());
+      }
+    }
+  }, [activeStudy]);
   const { navigate } = useApp();
 
   const handleNavigate = (id: string) => {

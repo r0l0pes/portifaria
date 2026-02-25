@@ -7,23 +7,27 @@ interface TiltCardProps extends HTMLMotionProps<"div"> {
     className?: string;
     tiltAmount?: number; // Max tilt in degrees
     scale?: number; // Scale on hover
+    href?: string;
 }
 
 /**
  * Interactive card that tilts toward the mouse cursor using spring physics.
  * Supports keyboard activation and scales on hover.
+ * Can be rendered as a link if an href is provided.
  * @param {TiltCardProps} props
  * @param {React.ReactNode} props.children - Card content
  * @param {string} [props.className] - Additional CSS classes
  * @param {number} [props.tiltAmount=TILT_AMOUNT_DEFAULT] - Max tilt angle in degrees
  * @param {number} [props.scale=SCALE_DEFAULT] - Scale factor on hover
- * @returns {React.ReactElement} Tilt-enabled motion div
+ * @param {string} [props.href] - Optional URL if the card should be a link
+ * @returns {React.ReactElement} Tilt-enabled motion component
  */
 export const TiltCard: React.FC<TiltCardProps> = React.memo(({
     children,
     className = '',
     tiltAmount = TILT_AMOUNT_DEFAULT,
     scale = SCALE_DEFAULT,
+    href,
     ...props
 }) => {
     const ref = useRef<HTMLDivElement>(null);
@@ -70,17 +74,22 @@ export const TiltCard: React.FC<TiltCardProps> = React.memo(({
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            (e.currentTarget as HTMLDivElement).click();
+            if (!href) {
+                e.preventDefault();
+                (e.currentTarget as HTMLDivElement).click();
+            }
         }
     };
 
+    const Component = (href ? motion.a : motion.div) as any;
+
     return (
-        <motion.div
+        <Component
             ref={ref}
             className={className}
-            role="button"
-            tabIndex={0}
+            href={href}
+            role={href ? undefined : "button"}
+            tabIndex={href ? undefined : 0}
             onKeyDown={handleKeyDown}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
@@ -90,6 +99,7 @@ export const TiltCard: React.FC<TiltCardProps> = React.memo(({
                 rotateX,
                 rotateY,
                 transformStyle: 'preserve-3d',
+                ...props.style,
             }}
             animate={{
                 scale: isHovered ? scale : 1,
@@ -99,6 +109,6 @@ export const TiltCard: React.FC<TiltCardProps> = React.memo(({
             <div style={{ transform: 'translateZ(20px)' }}>
                 {children}
             </div>
-        </motion.div>
+        </Component>
     );
 });
