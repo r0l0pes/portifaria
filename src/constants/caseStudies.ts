@@ -3,70 +3,74 @@ import { CaseStudy } from '@/types';
 export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs1",
-    "category": "AI & Humanitarian Tech",
-    "title": "Piloting a Generative AI Voice Agent for Low-Literacy Farmers",
-    "subtitle": "World Food Programme Innovation Accelerator",
-    "role": "Senior Product Manager",
-    "summary": "Demonstrated 60% cost efficiency potential for WFP's agricultural outreach by successfully piloting a generative AI voice agent with 5,000 low-literacy farmers in Tanzania. The core challenge was designing for users with zero smartphone literacy and intermittent connectivity. We proved the model viability by identifying field officers as the critical intermediary adoption driver, informing AI strategy across 20+ countries.",
-    "challenge": "Standard AI voice interfaces assume reliable connectivity, smartphone literacy, and well-resourced training data. None of these held true for Tanzanian smallholder farmers. The product hypothesis, that generative AI could replace human extension workers, needed validation before WFP committed to scaling. Without defined success metrics, the pilot risked producing anecdotal findings rather than the defensible investment recommendation leadership needed.",
+    "category": "SaaS & AI Products",
+    "title": "Scaling AI-Powered SMS Personalization for 18,000 Shopify Merchants",
+    "subtitle": "Postscript - SMS Marketing Platform",
+    "role": "Senior Product Manager, Growth & AI",
+    "summary": "Drove a 28% increase in earnings-per-message for Shopify merchants by leading product development of an AI-driven message optimization engine that tested hundreds of variants per automation. The core challenge was balancing AI-driven scale with brand voice authenticity. We proved that continuous AI optimization could outperform static A/B testing while keeping every message on-brand, and turned a regulatory compliance crisis into a competitive advantage through product-led SMS compliance.",
+    "challenge": "AI-powered message optimization was unproven at scale. Standard A/B testing optimized against a single variant, but with hundreds of thousands of subscribers across different segments, a single 'winning' message was a weak approximation of personalization. Merchants feared AI would generate off-brand copy if not properly constrained. Simultaneously, Texas SB 140 threatened $5,000-per-message penalties for consent-based SMS, and Oregon HB 3865 imposed quiet hours and send limits—regulations that threatened to paralyze the entire SMS channel. The product had to solve three tensions simultaneously: scale vs. authenticity, automation vs. compliance, and data-driven optimization vs. brand trust.",
     "approach": [
       {
-        "title": "Defined Defensible Success Metrics",
-        "description": "Structured validation around three measurable dimensions: Adoption (40%+ weekly active usage), Retention (60%+ return users at 8 weeks), and Decision Quality (behavior change proxies since harvest cycles extended beyond pilot timeline). Prioritized behavioral signals over perfect outcome measurement."
+        "title": "Built AI-Powered Message Optimization Engine",
+        "description": "Led product development of Infinity Testing, an AI system using predictive analytics and generative AI to create, test, and learn from hundreds of message variants per automation. Implemented Brand Center as the guardrail, training the AI on each merchant's unique voice before generating variants. This solved the fundamental tension: brands wanted AI-driven scale but feared losing control. By making brand voice training the prerequisite to AI features, we turned 'off-brand risk' from a blocker into an adoption driver."
       },
       {
-        "title": "Built Low-Connectivity Analytics",
-        "description": "Implemented tracking framework adapted for intermittent connectivity using call completion rates, session duration, NLP sentiment analysis on voice feedback, and manual field surveys for qualitative depth. Pivoted mid-pilot from digital-only metrics after field observations revealed farmers sharing phones."
+        "title": "Redesigned Subscriber Acquisition Around Compliance",
+        "description": "Redesigned the opt-in flow around one-tap mobile opt-in as default, incentive timing repositioned from 'discount upfront' to 'discount after first purchase', simplified consent language, and compliance safeguards baked into the experience rather than added after the fact. Proved that compliance and growth could reinforce each other rather than trade off."
       },
       {
-        "title": "Coordinated Distributed Stakeholders",
-        "description": "Managed weekly syncs across WFP field operations, Viamo engineering, and Innovation Accelerator leadership. Navigated misaligned incentives by translating each stakeholder's goals into shared success criteria, using early adoption curves and cost models to build alignment."
+        "title": "Built Analytics Instrumentation at Merchant Scale",
+        "description": "Designed and shipped an analytics framework establishing earnings-per-message and click-through rate as primary product KPIs across 18,000+ merchant accounts. Used this to identify engagement decay patterns unique to SMS versus email, driving a dedicated re-engagement automation roadmap."
       },
       {
-        "title": "Designed Strategic Recommendation Framework",
-        "description": "Structured final presentation around three decision paths (scale now, iterate, or exit) with explicit trade-offs, cost implications, and applicability across WFP's 20+ country agricultural portfolio."
+        "title": "Turned Compliance Crisis Into Product Advantage",
+        "description": "Influenced product-side compliance strategy during the Texas SB 140 and Oregon HB 3865 regulatory transitions. Designed compliance features as product-led tools (quiet hour controls, auto-enforcement by area code, opt-out management) rather than regulatory burdens. Positioned Postscript as the platform that protected merchants while competitors rushed to impose compliance costs."
       }
     ],
     "outcomes": [
       {
-        "title": "Pilot Validation",
-        "description": "Engaged 5,000 farmers across 6-month growing season. Demonstrated 60% cost efficiency potential vs. traditional extension worker model."
+        "title": "Revenue Impact",
+        "description": "28% increase in earnings-per-message across Infinity Testing campaigns, averaging 38% lift in campaign-specific tests."
       },
       {
-        "title": "Failure Mode Identification",
-        "description": "Identified 3 critical failure modes for AI voice in low-literacy contexts: connectivity dropoffs, dialect coverage gaps, and trust calibration with AI-generated advice."
+        "title": "Acquisition Improvement",
+        "description": "32% increase in opt-in conversion and 18% reduction in acquisition cost through redesigned subscriber acquisition flow."
       },
       {
-        "title": "Strategic Impact",
-        "description": "Informed WFP's decision framework for AI product investments across 20+ country programs and contributed to governance framework for responsible AI adoption."
+        "title": "Analytics Scale",
+        "description": "Instrumentation deployed across 18,000+ merchant accounts with EPM and CTR established as product-wide primary KPIs."
+      },
+      {
+        "title": "Compliance Leadership",
+        "description": "Contributed to product strategy that turned SMS regulatory crises (Texas SB 140, Oregon HB 3865) into competitive differentiation."
       }
     ],
     "keyMetric": {
-      "label": "Cost Efficiency Potential",
-      "value": "60%",
-      "description": "Cost reduction vs. traditional extension model",
+      "label": "Earnings Per Message",
+      "value": "+28%",
+      "description": "Increase in revenue per SMS sent",
       "chartData": [
         {
-          "name": "Extension Worker",
+          "name": "Static A/B",
           "value": 100
         },
         {
-          "name": "AI Voice",
-          "value": 40
+          "name": "Infinity Testing",
+          "value": 128
         }
       ]
     },
     "lessons": [
       {
-        "title": "Leading vs. Lagging Indicators",
-        "description": "Harvest outcomes extended beyond pilot timeline, so behavior change proxies (adoption of recommended practices) served as leading indicators. Defining this upfront aligned stakeholders and avoided the recurring 'let's wait for harvest data' debate."
+        "title": "Trust Is the Prerequisite for AI Adoption",
+        "description": "Infinity Testing adoption was slower than projected because merchants didn't trust AI-generated copy for their brand voice. Investing in Brand Center as a prerequisite (6 months earlier than we did) would have accelerated rollout by removing the trust barrier before asking merchants to buy into AI-generated messaging."
       },
       {
-        "title": "Field Reality Over Digital Metrics",
-        "description": "Initial adoption tracking relied too heavily on digital metrics; pivoted to qualitative field surveys which produced more honest assessments."
+        "title": "Compliance Can Be a Product Moat",
+        "description": "When competitors rushed to impose compliance costs on merchants during the Texas SB 140 panic, Postscript's product-led compliance strategy turned a regulatory crisis into competitive advantage. The lesson: regulation is an opportunity to build trust, not just a risk to mitigate."
       }
     ],
-    "slug": "ai-voice-agent-farmers"
+    "slug": "ai-sms-personalization-postscript"
   },
   {
     "id": "cs2",

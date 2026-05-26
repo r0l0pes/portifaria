@@ -51,7 +51,7 @@ const AboutContent = () => {
               <p className="mb-4">I am a Senior Product Manager based in Berlin. My recent path:</p>
               <div className="space-y-4">
                 {[
-                  { company: 'World Food Programme (Munich)', path: 'Shipped generative AI voice tech and shaped organizational AI governance.' },
+                  { company: 'Postscript (Remote)', path: 'Built AI-powered SMS optimization engine for 18,000+ Shopify merchants.' },
                   { company: 'FORVIA HELLA', path: 'Unified B2B e-commerce catalogs for 60,000+ workshops post-merger.' },
                   { company: 'Accenture Brasil (Natura)', path: 'Scaled an e-commerce platform across four Latin American countries and improved conversion rates.' },
                   { company: 'C&A Brasil', path: 'Led mobile shopping and early WhatsApp commerce integration, establishing the channel as a retention lever.' }

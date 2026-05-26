@@ -18,7 +18,7 @@ const BTN = {
 
 const logos = [
   { src: '/images/logos/raw/natura.png', alt: 'Natura', className: 'md:h-12' },
-  { src: '/images/logos/raw/wfp.png', alt: 'World Food Programme', className: 'md:h-14' },
+  { src: '/images/logos/raw/postscript.png', alt: 'Postscript', className: 'md:h-14' }, // TODO: add postscript.png
   { src: '/images/logos/raw/hella.png', alt: 'Forvia Hella', className: 'md:h-11' },
   { src: '/images/logos/raw/ca.png', alt: 'C&A', className: 'md:h-9' }, // Bolder marks need less scale
   { src: '/images/logos/raw/accenture.png', alt: 'Accenture', className: 'md:h-8' }, // Bolder marks need less scale

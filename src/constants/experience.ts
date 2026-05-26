@@ -2,14 +2,14 @@ import { ExperienceItem } from '@/types';
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    company: "World Food Programme",
-    role: "Senior Product Manager",
-    period: "Jun 2023 – Sep 2025",
-    location: "Munich",
+    company: "Postscript",
+    role: "Senior Product Manager, Growth & AI",
+    period: "Jul 2024 – Apr 2026",
+    location: "Remote",
     description: [
-      "Led end-to-end AI Voice Companion mobile rollout in five months to a 5,000-user pilot cohort of Tanzanian farmers.",
-      "Boosted app awareness by 15%, weekly active accounts by 25%, and retention by 12% through targeted A/B tests.",
-      "Built an XGBoost-based machine learning demand forecast on AWS, cutting oversupply by 20% and boosting accuracy by 30%."
+      "Led product development for an AI-powered message optimization engine, testing hundreds of variants per automation and driving a 28% increase in earnings-per-message for Shopify merchants through continuous model learning.",
+      "Redesigned subscriber acquisition around SMS compliance with one-tap mobile opt-in, increasing opt-in conversion by 32% and reducing acquisition cost by 18%.",
+      "Built analytics instrumentation measuring SMS program health across 18,000+ merchant accounts, identifying engagement decay patterns unique to SMS versus email and driving a re-engagement automation roadmap."
     ]
   },
   {
