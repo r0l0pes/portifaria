@@ -14,12 +14,12 @@ const AboutContent = () => {
   ];
   const tools = [
     'Jira', 'Linear', 'Productboard', 'Notion', 'Zapier', 'n8n', 'Retool', 'Granola',
-    'Figma', 'Claude Code', 'Codex', 'Gemini', 'VS Code', 'Supabase', 'Kilo Code',
-    'REST APIs', 'VTEX E-commerce'
+    'Figma', 'Claude Code', 'Cursor', 'Gemini', 'VS Code', 'Supabase', 'PostHog',
+    'REST APIs'
   ];
   const methodologies = [
     'SQL', 'A/B Testing', 'GA4', 'Mixpanel', 'Power BI', 'Tableau',
-    'ChatGPT/Claude/NotebookLM', 'Voice AI', 'Machine Learning Training'
+    'LLM Workflows', 'Voice AI', 'Prompt Engineering'
   ];
 
   return (
