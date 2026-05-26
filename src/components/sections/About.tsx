@@ -10,7 +10,8 @@ const AboutContent = () => {
 
   const coreSkills = [
     'Product Strategy', 'Experimentation Frameworks', 'Discovery Methods',
-    'Roadmap Prioritization', 'OKRs', 'Stakeholder Alignment', 'Go-to-Market Planning'
+    'Roadmap Prioritization', 'OKRs', 'Stakeholder Alignment', 'Go-to-Market Planning',
+    'CRO', 'PLG', 'Activation & Onboarding', 'Funnel & Cohort Analysis'
   ];
   const tools = [
     'Jira', 'Linear', 'Productboard', 'Notion', 'Zapier', 'n8n', 'Retool', 'Granola',
