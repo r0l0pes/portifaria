@@ -142,7 +142,12 @@ async function fetchEmailBody(emailId: string): Promise<string> {
 
 // ─── Email Forwarding ──────────────────────────────────────────────────
 
-async function forwardEmail(subject: string, body: string, fromName: string) {
+async function forwardEmail(
+	subject: string,
+	body: string,
+	fromName: string,
+	replyTo?: string,
+) {
 	const res = await fetch("https://api.resend.com/emails", {
 		method: "POST",
 		headers: {
@@ -153,6 +158,7 @@ async function forwardEmail(subject: string, body: string, fromName: string) {
 			from: FROM_ADDRESS,
 			to: [GMAIL_ADDRESS],
 			subject,
+			reply_to: replyTo,
 			html: `<p><strong>From:</strong> ${fromName}</p><hr/><pre style="white-space:pre-wrap;font-family:inherit;">${body}</pre>`,
 			text: `From: ${fromName}\n---\n${body}`,
 		}),
@@ -192,11 +198,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 	const classification = classifyEmail(subject || "", body);
 	let taggedSubject = subject || "(no subject)";
 
-	switch (classification) {
+		switch (classification) {
 		case "interview": {
 			taggedSubject = `[INTERVIEW] ${taggedSubject}`;
 
-			await forwardEmail(taggedSubject, forwardingBody, from);
+			await forwardEmail(taggedSubject, forwardingBody, from, senderEmail);
 
 			console.log(`[INTERVIEW] ${subject} from ${senderEmail}`);
 			break;
@@ -216,14 +222,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 			}
 
 			// Re-forward with DPO note appended
-			await forwardEmail(taggedSubject, forwardingBody + dpoNote, from);
+			await forwardEmail(taggedSubject, forwardingBody + dpoNote, from, senderEmail);
 			break;
 		}
 
 		default: {
 			taggedSubject = `[APPLIED] ${taggedSubject}`;
 
-			await forwardEmail(taggedSubject, forwardingBody, from);
+			await forwardEmail(taggedSubject, forwardingBody, from, senderEmail);
 
 			console.log(`[APPLIED] ${subject} from ${senderEmail}`);
 			break;
