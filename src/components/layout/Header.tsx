@@ -34,7 +34,6 @@ const Header = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   const navLinks = [
     { name: 'About', id: 'about' },
     { name: 'Work', id: 'work' },
-    { name: 'Writing', id: 'writings' },
   ];
 
   const handleNavClick = (id: string) => {

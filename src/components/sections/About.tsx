@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Download, ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { logEvent } from '../../components/Analytics';
+
 import { BlurFade } from '../ui/BlurFade';
 
 const AboutContent = () => {
@@ -82,23 +82,7 @@ const AboutContent = () => {
           </div>
         </BlurFade>
 
-        {/* Download Resume Button */}
-        <div className="pt-2">
-          <motion.a
-            href="/Resume_Rodrigo-Lopes.pdf"
-            download
-            aria-label="Download Resume PDF"
-            className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold text-sm rounded-xl"
-            style={{ background: 'linear-gradient(180deg, #C85535 0%, #9E3520 100%)', boxShadow: '0 4px 0 #6B2210, 0 8px 20px rgba(0,0,0,0.12)' }}
-            onClick={() => logEvent('Engagement', 'Download Resume')}
-            whileHover={{ scale: 1.02, y: -1 }}
-            whileTap={{ scale: 0.98, y: 2 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
-            <Download size={16} />
-            Download Resume
-          </motion.a>
-        </div>
+
 
         {/* Core Skills Dropdown */}
         <BlurFade delay={0.4}>

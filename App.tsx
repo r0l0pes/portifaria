@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { CASE_STUDIES } from '@/constants';
-import { CaseStudy } from '@/types';
+import type { CaseStudy } from '@/types';
 import { ScrollProgress } from './src/components/ui/ScrollProgress';
 import { Analytics, logEvent } from './src/components/Analytics';
 import { Header } from '@/components/layout/Header';
@@ -8,7 +8,6 @@ import { HeroContent } from '@/components/sections/Hero';
 import { AboutContent } from '@/components/sections/About';
 const WorkSection = React.lazy(() => import('@/components/sections/Work').then(m => ({ default: m.WorkSection })));
 const CaseStudyModal = React.lazy(() => import('@/components/sections/Work').then(m => ({ default: m.CaseStudyModal })));
-const BlogContent = React.lazy(() => import('@/components/sections/Writings').then(m => ({ default: m.BlogContent })));
 import { FooterContent } from '@/components/sections/Contact';
 import { SectionCard } from '@/components/layout/SectionCard';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
@@ -88,11 +87,6 @@ const App = () => {
             </SectionCard>
           </ErrorBoundary>
 
-          <ErrorBoundary>
-            <SectionCard id="writings">
-              <BlogContent />
-            </SectionCard>
-          </ErrorBoundary>
 
           <ErrorBoundary>
             <SectionCard id="contact">
