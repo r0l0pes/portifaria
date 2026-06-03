@@ -56,6 +56,10 @@ vi.mock("../../src/components/ui/BlurFade", () => ({
   BlurFade: ({ children }: any) => <>{children}</>,
 }));
 
+vi.mock("../../src/components/ui/AnimatedGridPattern", () => ({
+  AnimatedGridPattern: () => null,
+}));
+
 // Mock lazy-loaded sections to render nothing synchronously
 vi.mock("../../src/components/sections/Writings", () => ({
   BlogContent: () => null,
