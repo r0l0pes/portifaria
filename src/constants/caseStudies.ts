@@ -12,7 +12,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "approach": [
       {
         "title": "Built AI-Powered Message Optimization Engine",
-        "description": "Led product development of Infinity Testing, an AI system using predictive analytics and generative AI to create, test, and learn from hundreds of message variants per automation. Implemented Brand Center as the guardrail, training the AI on each merchant's unique voice before generating variants. This solved the fundamental tension: brands wanted AI-driven scale but feared losing control. By making brand voice training the prerequisite to AI features, we turned 'off-brand risk' from a blocker into an adoption driver."
+        "description": "Led product development of Infinity Testing, an AI system using predictive analytics and generative AI to create, test, and learn from hundreds of message variants per automation. Implemented Brand Center as the evaluation guardrail, training the AI on each merchant's unique voice before generating variants and evaluating variant quality against brand guidelines and live performance data before any variant was promoted. This solved the fundamental tension: brands wanted AI-driven scale but feared losing control. By making brand voice training the prerequisite to AI features, we turned 'off-brand risk' from a blocker into an adoption driver."
       },
       {
         "title": "Redesigned Subscriber Acquisition Around Compliance",
@@ -154,7 +154,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "approach": [
       {
         "title": "Data-Driven Experimentation",
-        "description": "Conducted comprehensive funnel analysis and heatmaps. Ran 37+ A/B tests on simplified checkout flows, Google Maps address autocomplete, and expanded payment methods (Pix, Mercado Pago, Buy Now Pay Later)."
+        "description": "Conducted comprehensive funnel analysis and heatmaps. Ran structured A/B experiments across simplified checkout flows, Google Maps address autocomplete, and expanded payment methods (Pix, Mercado Pago, Buy Now Pay Later)."
       },
       {
         "title": "Playbook Development",

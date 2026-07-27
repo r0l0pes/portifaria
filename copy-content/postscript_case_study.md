@@ -1,5 +1,5 @@
 # Scaling AI-Powered SMS Personalization for 18,000 Shopify Merchants
-**Postscript** | Jul 2024 – Apr 2026 | Remote
+**Postscript** | Jul 2024 – Jun 2026 | Remote
 
 *Led product development for an AI-driven message optimization engine that balanced the tension between sending more SMS messages and keeping every one on-brand, driving a 28% increase in earnings-per-message for Shopify merchants. Redesigned subscriber acquisition around SMS compliance, achieving 32% higher opt-in conversion and 18% lower acquisition cost. Built analytics instrumentation measuring SMS program health across 18,000+ merchant accounts.*
 

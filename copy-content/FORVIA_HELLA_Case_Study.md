@@ -1,5 +1,5 @@
 # Post-Merger B2B E-Commerce Integration
-**FORVIA HELLA** | Jul 2022 – Jan 2024 | Berlin, Germany
+**FORVIA HELLA** | Nov 2022 – May 2024 | Berlin, Germany
 
 *Enabled €12M+ Year 1 cross-sell revenue through catalog unification and UX optimization serving 60,000+ workshops; grew digital order share as the platform's North Star Metric.*
 

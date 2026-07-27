@@ -1,5 +1,5 @@
 # E-Commerce Checkout Optimization
-**C&A Brasil** | Mar 2018 – Sep 2019 (18 months) | São Paulo, Brazil
+**C&A Brasil** | Aug 2018 – May 2020 | São Paulo, Brazil
 
 *Hired as most junior PM on 6-person team, promoted to Senior PM after +28% conversion rate improvement*
 

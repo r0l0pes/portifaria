@@ -4,7 +4,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     company: "Postscript",
     role: "Senior Product Manager, Growth & AI",
-    period: "Jul 2024 – Apr 2026",
+    period: "Jul 2024 – Jun 2026",
     location: "Remote",
     description: [
       "Led product development for an AI-powered message optimization engine, testing hundreds of variants per automation and driving a 28% increase in earnings-per-message for Shopify merchants through continuous model learning.",
@@ -13,36 +13,36 @@ export const EXPERIENCE: ExperienceItem[] = [
     ]
   },
   {
-    company: "Fab City Hamburg",
+    company: "FORVIA HELLA",
     role: "Senior Product Manager",
-    period: "Jan 2022 – Apr 2023",
-    location: "Hamburg",
-    description: [
-      "Launched Fab City Operating System (FCOS) MVP to help cities track physical resources and meet EU Circular Economy goals.",
-      "Integrated Hyperledger Fabric for traceability, doubling FCOS cadence and improving release success rate by 30%.",
-      "Onboarded five municipal partners, facilitating stakeholder engagement across government and technical teams."
-    ]
-  },
-  {
-    company: "HELLA Aglaia Mobile Vision",
-    role: "Senior Product Manager",
-    period: "Aug 2020 – Dec 2021",
+    period: "Nov 2022 – May 2024",
     location: "Berlin",
     description: [
-      "Shaped vision and roadmap for a data mesh-based batch-and-streaming platform to enable 24/7 insights.",
-      "Accelerated enterprise data lake modernisation boosting self-service adoption by 35%.",
-      "Led cross-functional team to launch an Android app for ADAS feedback, reducing harsh-brake events by 18%."
+      "Enabled €12M+ Year 1 cross-sell revenue by unifying Faurecia's 15,000+ SKUs into HELLA Partner World's B2B catalog for 60,000+ workshops, growing digital order share as the platform's North Star Metric.",
+      "Reduced order completion time by 35% and lifted self-service adoption by 40% through a streamlined multi-item checkout redesign and Userlane digital adoption tooling.",
+      "Improved Net Promoter Score by 22 points post-optimization while maintaining 99.9%+ uptime during the post-merger integration."
     ]
   },
   {
-    company: "Accenture Brasil",
+    company: "Accenture Brasil (Natura & Co)",
     role: "Digital Product Manager",
-    period: "Sep 2017 – Apr 2020",
+    period: "Jun 2020 – Aug 2022",
     location: "São Paulo, BR",
     description: [
-      "Managed projects for Natura (major LatAm beauty retailer) and Itau (leading Brazilian bank).",
-      "Cut cart abandonment by 15% and increased conversions by 50% through UX friction testing.",
-      "Integrated Mastercard's API for real-time authorization, reducing false positives by 28%."
+      "Drove a 45% increase in checkout conversion and a 15% reduction in cart abandonment for Natura Brazil, optimizing for a social commerce model where consultant-shared links were the primary acquisition path.",
+      "Expanded the optimized platform across 4 Latin American markets (Argentina, Colombia, Chile, Mexico) in 6 months with 90%+ feature parity, using a standardized rollout playbook piloted in Argentina.",
+      "Compressed subsequent market time-to-market by 35% through playbook reuse and shared platform components across a 50+ person distributed program."
+    ]
+  },
+  {
+    company: "C&A Brasil",
+    role: "Product Manager",
+    period: "Aug 2018 – May 2020",
+    location: "São Paulo, BR",
+    description: [
+      "Boosted mobile checkout conversion by 28% and cut cart abandonment by 18% by repositioning installment pricing as the default display and redesigning a mobile-first checkout for 80%+ mobile traffic.",
+      "Expanded payment methods with Boleto and Mercado Pago and reduced form fields from 12 to 7 with Google Maps address autocomplete, lifting input accuracy and checkout completion.",
+      "Established the product foundation for Brazil's first WhatsApp commerce channel, enabling 800+ store associates with inventory lookup, link generation, and order attribution specs for VTEX."
     ]
   }
 ];

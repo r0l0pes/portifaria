@@ -1,5 +1,5 @@
 # C&A Brasil: WhatsApp Commerce Strategy – Product Foundations
-**Senior Product Manager** | Oct 2019 – Jan 2020 (4 months) | São Paulo, Brazil
+**Senior Product Manager** | Aug 2018 – May 2020 | São Paulo, Brazil
 
 *Supported pilot-to-scale transition that validated R$1.17B WhatsApp commerce channel (>50% of digital sales by 2022)*
 

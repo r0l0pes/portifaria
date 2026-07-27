@@ -1,5 +1,5 @@
 # E-Commerce Growth & LatAm Expansion
-**Accenture Brasil (Client: Natura & Co)** | Feb 2020 – Apr 2022 | São Paulo, Brazil
+**Accenture Brasil (Client: Natura & Co)** | Jun 2020 – Aug 2022 | São Paulo, Brazil
 
 *Increased conversion rate by 45% and reduced cart abandonment by 15% in Brazil, then expanded platform across 4 Latin American markets in 6 months, optimizing for Natura's social commerce model where consultant-shared links were the primary acquisition path.*
 

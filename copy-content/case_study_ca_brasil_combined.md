@@ -1,5 +1,5 @@
 # C&A Brasil: E-Commerce Checkout Optimization & WhatsApp Commerce
-**Product Manager to Senior Product Manager** | Mar 2018 – Jan 2020 (22 months) | São Paulo, Brazil
+**Product Manager to Senior Product Manager** | Aug 2018 – May 2020 | São Paulo, Brazil
 
 *Increased conversion rate by +28% and reduced cart abandonment by -18%, leading to promotion to Senior PM after 18 months*
 
