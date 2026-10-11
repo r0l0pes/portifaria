@@ -1,7 +1,6 @@
 import type React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { LiquidShader } from "@/components/ui/LiquidShader";
 import { ShinyButton } from "@/components/ui/ShinyButton";
 import { LogoMarquee } from "@/components/ui/LogoMarquee";
 
@@ -42,15 +41,6 @@ export const HeroContent: React.FC<HeroProps> = ({ onNavigate }) => {
 
 	return (
 		<div className="relative flex flex-col items-center justify-center text-center min-h-[70vh] md:min-h-[75vh] pt-0 pb-12 md:pb-16 overflow-hidden">
-			<LiquidShader
-				speed={0.12}
-				warpStrength={0.9}
-				mouseIntensity={0.5}
-				brightness={0.7}
-				gamma={2.0}
-				className="opacity-60 [mask-image:radial-gradient(900px_circle_at_50%_40%,black,transparent_75%)]"
-			/>
-
 			<motion.div
 				style={{ y: yHero, opacity: opacityHero }}
 				className="relative z-10 flex flex-col items-center w-full px-6 md:px-12"
