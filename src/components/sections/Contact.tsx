@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState } from "react";
-import { Mail, Linkedin, Github, BookOpen } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import { HERO_DATA } from "@/constants";
 import { logEvent } from "../../components/Analytics";
@@ -161,13 +161,6 @@ const socialLinks = [
 		label: "GitHub",
 		getHref: () => `https://${HERO_DATA.contact.github}`,
 		event: "Click GitHub",
-	},
-	{
-		key: "substack",
-		Icon: BookOpen,
-		label: "Substack",
-		getHref: () => `https://substack.com/@r0l0pes`,
-		event: "Click Substack",
 	},
 ];
 

@@ -4,15 +4,15 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs1",
     "category": "SaaS & AI Products",
-    "title": "Scaling AI-Powered SMS Personalization for 18,000 Shopify Merchants",
+    "title": "Post-launch AI-Powered SMS Optimization for Shopify Merchants",
     "subtitle": "Postscript - SMS Marketing Platform",
-    "role": "Senior Product Manager, Growth & AI",
-    "summary": "Drove a 28% increase in earnings-per-message for Shopify merchants by leading product development of an AI-driven message optimization engine that tested hundreds of variants per automation. The core challenge was balancing AI-driven scale with brand voice authenticity. We proved that continuous AI optimization could outperform static A/B testing while keeping every message on-brand, and turned a regulatory compliance crisis into a competitive advantage through product-led SMS compliance.",
+    "role": "Senior Product Manager",
+    "summary": "Owned post-launch product direction and iteration of Infinity Testing, an AI-powered message optimization system that generated hundreds of brand-aligned message variants and evaluated them against live subscriber segments. Used Brand Center as the brand-voice control layer and preserved merchant review before activation, defining product-specific quality criteria across brand fit, predicted CTR, and earnings-per-message. Infinity Testing campaigns delivered a 28% increase in EPM. In parallel, redesigned subscriber acquisition around SMS compliance and built analytics instrumentation across 18,000+ merchant accounts.",
     "challenge": "AI-powered message optimization was unproven at scale. Standard A/B testing optimized against a single variant, but with hundreds of thousands of subscribers across different segments, a single 'winning' message was a weak approximation of personalization. Merchants feared AI would generate off-brand copy if not properly constrained. Simultaneously, Texas SB 140 threatened $5,000-per-message penalties for consent-based SMS, and Oregon HB 3865 imposed quiet hours and send limits—regulations that threatened to paralyze the entire SMS channel. The product had to solve three tensions simultaneously: scale vs. authenticity, automation vs. compliance, and data-driven optimization vs. brand trust.",
     "approach": [
       {
-        "title": "Built AI-Powered Message Optimization Engine",
-        "description": "Led product development of Infinity Testing, an AI system using predictive analytics and generative AI to create, test, and learn from hundreds of message variants per automation. Implemented Brand Center as the evaluation guardrail, training the AI on each merchant's unique voice before generating variants and evaluating variant quality against brand guidelines and live performance data before any variant was promoted. This solved the fundamental tension: brands wanted AI-driven scale but feared losing control. By making brand voice training the prerequisite to AI features, we turned 'off-brand risk' from a blocker into an adoption driver."
+        "title": "Owned Post-Launch Message Optimization",
+        "description": "Owned post-launch product direction and iteration of Infinity Testing, where generative AI produced hundreds of brand-aligned message variants and predictive analytics tested them against live subscriber segments. Used Brand Center as the brand-voice control layer and preserved merchant review before activation to address the trust barrier that initially slowed adoption. Defined product-specific quality criteria across brand fit, predicted CTR, and earnings-per-message."
       },
       {
         "title": "Redesigned Subscriber Acquisition Around Compliance",
@@ -20,17 +20,17 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         "title": "Built Analytics Instrumentation at Merchant Scale",
-        "description": "Designed and shipped an analytics framework establishing earnings-per-message and click-through rate as primary product KPIs across 18,000+ merchant accounts. Used this to identify engagement decay patterns unique to SMS versus email, driving a dedicated re-engagement automation roadmap."
+        "description": "Designed analytics instrumentation establishing earnings-per-message and click-through rate as primary product KPIs across 18,000+ merchant accounts. Used engagement data to identify SMS-specific decay patterns and prioritize a re-engagement automation roadmap."
       },
       {
         "title": "Turned Compliance Crisis Into Product Advantage",
-        "description": "Influenced product-side compliance strategy during the Texas SB 140 and Oregon HB 3865 regulatory transitions. Designed compliance features as product-led tools (quiet hour controls, auto-enforcement by area code, opt-out management) rather than regulatory burdens. Positioned Postscript as the platform that protected merchants while competitors rushed to impose compliance costs."
+        "description": "Influenced product-side compliance strategy during the Texas SB 140 and Oregon HB 3865 regulatory transitions. Supported product-led compliance tools such as quiet-hour controls, auto-enforcement by area code, and opt-out management, positioning Postscript as a platform that protected merchants while competitors rushed to impose compliance costs."
       }
     ],
     "outcomes": [
       {
         "title": "Revenue Impact",
-        "description": "28% increase in earnings-per-message across Infinity Testing campaigns, averaging 38% lift in campaign-specific tests."
+        "description": "28% increase in earnings-per-message across Infinity Testing campaigns."
       },
       {
         "title": "Acquisition Improvement",
@@ -63,7 +63,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "lessons": [
       {
         "title": "Trust Is the Prerequisite for AI Adoption",
-        "description": "Infinity Testing adoption was slower than projected because merchants didn't trust AI-generated copy for their brand voice. Investing in Brand Center as a prerequisite (6 months earlier than we did) would have accelerated rollout by removing the trust barrier before asking merchants to buy into AI-generated messaging."
+        "description": "Infinity Testing adoption was slower than projected because merchants didn't trust AI-generated copy for their brand voice. Using Brand Center as a prerequisite for AI features and preserving merchant review before activation addressed the trust barrier before asking merchants to adopt AI-generated messaging."
       },
       {
         "title": "Compliance Can Be a Product Moat",
@@ -78,7 +78,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "title": "Unifying a B2B E-Commerce Platform Post-Merger",
     "subtitle": "FORVIA HELLA - B2B E-Commerce Platform",
     "role": "Senior Product Manager",
-    "summary": "Enabled €12M+ Year 1 cross-sell revenue for 60,000+ workshops following the €400M FORVIA-HELLA merger. The challenge was integrating Faurecia's 15,000+ SKUs into a single-vendor catalog without breaking the existing search and checkout experience. We drove adoption by establishing digital order share as the North Star Metric and redesigning the multi-item checkout flow.",
+    "summary": "The unified catalog delivered €12M+ in first-year cross-sell revenue across 60,000+ workshops following the €400M FORVIA-HELLA merger. The challenge was integrating Faurecia's 15,000+ SKUs into a single-vendor catalog without breaking the existing search and checkout experience. We drove adoption by establishing digital order share as the North Star Metric and redesigning the multi-item checkout flow.",
     "challenge": "HELLA Partner World operated as a single-vendor catalog optimized for lighting and electronics products. Post-merger, three core challenges emerged: integrating Faurecia's 15,000+ SKUs without degrading search/navigation; commercial misalignment with cross-functional stakeholders operating in silos with conflicting priorities; and UX debt in checkout flows optimized for single-vendor ordering that created friction for multi-item, cross-brand purchases.",
     "approach": [
       {
@@ -101,7 +101,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "outcomes": [
       {
         "title": "Revenue Impact",
-        "description": "Enabled EUR 12M+ Year 1 cross-sell revenue through unified catalog and improved product discoverability."
+        "description": "First-year cross-sell revenue from the unified catalog reached €12M+"
       },
       {
         "title": "Operational Efficiency",
@@ -117,19 +117,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       }
     ],
     "keyMetric": {
-      "label": "Year 1 Cross-Sell",
-      "value": "EUR 12M+",
-      "description": "Revenue through unified catalog",
-      "chartData": [
-        {
-          "name": "Target",
-          "value": 10
-        },
-        {
-          "name": "Achieved",
-          "value": 12
-        }
-      ]
+      "label": "First-Year Cross-Sell",
+      "value": "€12M+",
+      "description": "Revenue through unified catalog"
     },
     "lessons": [
       {
@@ -148,13 +138,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     "category": "E-Commerce Expansion",
     "title": "Expanding E-Commerce Operations Across 4 LatAm Markets",
     "subtitle": "Natura & Co (via Accenture) - Multi-Country E-Commerce Platform",
-    "role": "Senior Product Manager",
-    "summary": "Drove a 45% increase in checkout conversion for Natura Brazil and expanded the platform across 4 LatAm markets in just 6 months. The challenge was optimizing for a unique social commerce model where consultant-shared links were the primary acquisition path, requiring localized payment methods across all countries. We achieved rapid scale by standardizing a rollout playbook across a 50+ person distributed team.",
-    "challenge": "Brazil's e-commerce checkout suffered from 70%+ abandonment due to complex address entry and fragmented payment preferences. A key nuance: Natura's acquisition model relied on beauty consultants sharing product links directly with customers, meaning checkout optimization had to account for the full social commerce funnel. Phase 2 required expanding to LatAm markets with distinct localization requirements while maintaining an aggressive 6-month timeline.",
+    "role": "Senior Product Manager / Digital Commerce",
+    "summary": "Drove a 45% increase in checkout conversion for Natura Brazil and expanded the platform across 4 LatAm markets in just 6 months. The challenge was optimizing for a unique social commerce model where consultant-shared links were the primary acquisition path, requiring country-specific payment localization (Mercado Pago, PSE, WebPay, OXXO), languages, and regulatory requirements. We achieved rapid scale by standardizing a rollout playbook across a 50+ person distributed team.",
+    "challenge": "Brazil's e-commerce checkout suffered from high abandonment due to complex address entry and fragmented payment preferences. A key nuance: Natura's acquisition model relied on beauty consultants sharing product links directly with customers, meaning checkout optimization had to account for the full social commerce funnel. Phase 2 required expanding to LatAm markets with distinct localization requirements while maintaining an aggressive 6-month timeline.",
     "approach": [
       {
         "title": "Data-Driven Experimentation",
-        "description": "Conducted comprehensive funnel analysis and heatmaps. Ran structured A/B experiments across simplified checkout flows, Google Maps address autocomplete, and expanded payment methods (Pix, Mercado Pago, Buy Now Pay Later)."
+        "description": "Conducted comprehensive funnel analysis and heatmaps. Ran structured A/B experiments across simplified checkout flows, Google Maps address autocomplete, and expanded payment methods in Brazil (Pix, Mercado Pago, Buy Now Pay Later)."
       },
       {
         "title": "Playbook Development",
@@ -186,17 +176,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     "keyMetric": {
       "label": "Conversion Rate",
       "value": "+45%",
-      "description": "Increase in checkout conversion",
-      "chartData": [
-        {
-          "name": "Before",
-          "value": 2.8
-        },
-        {
-          "name": "After",
-          "value": 4.1
-        }
-      ]
+      "description": "Increase in checkout conversion"
     },
     "lessons": [
       {
@@ -215,9 +195,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     "category": "Mobile Checkout",
     "title": "Boosting Mobile Conversion for a Major Fashion Retailer",
     "subtitle": "C&A Brasil - Fashion E-Commerce Platform",
-    "role": "Product Manager -> Senior PM",
-    "summary": "Achieved +28% checkout conversion and -18% cart abandonment for C&A's mobile e-commerce platform. The primary barrier was systemic: displaying lump-sum prices to a user base where 70% relied on instalment payments and credit card penetration was under 50%. We fixed this by repositioning instalment pricing as the default display format alongside a streamlined mobile-first checkout.",
-    "challenge": "Mobile checkout abandonment sat at 70–75% on a platform serving 80%+ mobile traffic. Beyond form friction and poor multi-item cart UX, the core payment barrier was systemic: over 70% of Brazilian e-commerce purchases used instalment plans and card penetration was below 50%, meaning a checkout showing only lump-sum, card-only options was filtering out a significant share of shoppers before they could buy.",
+    "role": "Product Manager",
+    "summary": "Achieved +28% checkout conversion and -18% cart abandonment for C&A's mobile e-commerce platform. The primary barrier was systemic: in a Brazilian e-commerce market where over 70% of purchases used instalment plans and credit card penetration was below 50%, displaying lump-sum prices filtered out a significant share of shoppers. We fixed this by repositioning instalment pricing as the default display format alongside a streamlined mobile-first checkout.",
+    "challenge": "Mobile checkout abandonment was high on a platform serving 80%+ mobile traffic. Beyond form friction and poor multi-item cart UX, the core payment barrier was systemic: over 70% of Brazilian e-commerce purchases used instalment plans and card penetration was below 50%, meaning a checkout showing only lump-sum, card-only options was filtering out a significant share of shoppers before they could buy.",
     "approach": [
       {
         "title": "Funnel Analysis and Diagnosis",
@@ -239,31 +219,21 @@ export const CASE_STUDIES: CaseStudy[] = [
     "outcomes": [
       {
         "title": "Conversion Impact",
-        "description": "+28% conversion rate improvement (from ~2.8% baseline to ~3.6%)."
+        "description": "+28% conversion rate improvement"
       },
       {
         "title": "Abandonment Reduction",
-        "description": "-18% cart abandonment reduction (from ~72% to ~59%)."
+        "description": "-18% cart abandonment reduction"
       },
       {
         "title": "Career Growth",
-        "description": "Promoted to Senior PM after 18 months based on measurable checkout impact, assuming ownership of Checkout & Payments vertical."
+        "description": "As Product Manager, expanded ownership to the Checkout & Payments vertical."
       }
     ],
     "keyMetric": {
       "label": "Conversion Rate",
       "value": "+28%",
-      "description": "Increase in checkout conversion",
-      "chartData": [
-        {
-          "name": "Before",
-          "value": 2.8
-        },
-        {
-          "name": "After",
-          "value": 3.6
-        }
-      ]
+      "description": "Increase in checkout conversion"
     },
     "lessons": [
       {
@@ -280,15 +250,15 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     "id": "cs5",
     "category": "Conversational Commerce",
-    "title": "Building Brazil's First WhatsApp Commerce Platform At Scale",
+    "title": "Product Foundations for C&A's WhatsApp Commerce Channel",
     "subtitle": "C&A Brasil - WhatsApp Business Strategy",
-    "role": "Senior Product Manager (Supporting)",
-    "summary": "Enabled a new WhatsApp commerce channel that eventually scaled to R$1.17B GMV by 2022, accounting for >50% of C&A's digital sales. The challenge was launching quickly to validate human-led conversational commerce without waiting for complex native integrations into the VTEX legacy platform. We established the product foundations through clear operational metrics and workflow design for 800+ store associates.",
-    "challenge": "In late 2019, WhatsApp was Brazil's dominant app, but no fashion retailer had scaled it as a sales channel. The Sales team wanted a feature-rich launch (AI chatbots, personalization) immediately, but the e-commerce platform (VTEX) lacked native integration. The challenge was defining a technically feasible MVP that could launch quickly to validate the hypothesis (human-led sales) without getting bogged down in unproven AI complexity.",
+    "role": "Product Manager",
+    "summary": "Launched one of Brazil's earliest enterprise WhatsApp Business API deployments in fashion retail, integrating Salesforce Marketing Cloud for order notifications and lifecycle messaging and establishing the channel as a retention and re-engagement lever. Defined the operational metrics and associate workflow foundations for the pilot. The channel's later commercial scale, including roughly half of C&A's R$1.17B FY2022 digital gross revenue, was a company and Sales/Commercial outcome after my C&A tenure ended in Aug 2020.",
+    "challenge": "In late 2019, WhatsApp was Brazil's dominant app, but no fashion retailer had scaled it as a sales channel. The Sales team wanted a feature-rich launch (AI chatbots, personalization) immediately, but the e-commerce platform (VTEX) lacked native integration. The challenge was defining a technically feasible MVP that could launch quickly without getting bogged down in unproven AI complexity.",
     "approach": [
       {
         "title": "MVP Scope Definition",
-        "description": "Advocated for a 'human-first, tech-light' MVP. Instead of building complex chatbots, we focused on enabling 800+ associates with basic tools: inventory lookup, link generation, and order attribution. This allowed for faster launch."
+        "description": "Advocated for a 'human-first, tech-light' MVP. Instead of building complex chatbots, we focused on enabling store associates with basic tools: inventory lookup, link generation, and order attribution. This allowed for faster launch."
       },
       {
         "title": "Metrics Framework Design",
@@ -305,41 +275,27 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     "outcomes": [
       {
-        "title": "Scale Validation",
-        "description": "Channel grew to R$1.17B GMV by 2022 (Source: C&A 4Q22 Earnings), validating the strategic bet on WhatsApp."
+        "title": "Channel Launch",
+        "description": "Launched one of Brazil's earliest enterprise WhatsApp Business API deployments in fashion retail, with Salesforce Marketing Cloud integration for order notifications and lifecycle messaging."
       },
       {
-        "title": "Digital Dominance",
-        "description": "Accounted for >50% of all digital sales in Q1 2022, proving that conversational commerce could outperform traditional web e-commerce in Brazil."
+        "title": "Retention Lever",
+        "description": "Established the channel as a retention and re-engagement lever, and defined the conversion and operational metrics framework and associate workflow foundations."
       },
       {
-        "title": "Unit Economics",
-        "description": "Achieved 2x Average Order Value (AOV) compared to physical stores, as personalized advice drove bigger baskets."
-      },
-      {
-        "title": "Strategic Foresight",
-        "description": "Validated the 'human-in-the-loop' model years before competitors, giving C&A a significant operational advantage during the 2020-2021 digital shift."
+        "title": "Later Company Outcome (post-tenure)",
+        "description": "After my C&A tenure ended in Aug 2020, the channel reached 50.2% of C&A digital gross revenue in FY2022, against total digital GMV of R$1.17B, +30% YoY, and 2x average order value vs. physical stores. Source: C&A 4Q22 release. These are company and Sales/Commercial results, not my personal outcomes."
       }
     ],
     "keyMetric": {
-      "label": "Channel Scale (2022)",
-      "value": "R$1.17B",
-      "description": "GMV via WhatsApp Channel",
-      "chartData": [
-        {
-          "name": "2019",
-          "value": 0
-        },
-        {
-          "name": "2022",
-          "value": 1.17
-        }
-      ]
+      "label": "WhatsApp Business API",
+      "value": "Launch & integration",
+      "description": "One of Brazil's earliest enterprise WhatsApp Business API deployments in fashion retail, with Salesforce Marketing Cloud integration for order notifications and lifecycle messaging."
     },
     "lessons": [
       {
         "title": "Enablement vs. Ownership",
-        "description": "I supported this initiative without owning the P&L. It taught me the importance of setting strong technical foundations for commercial teams to build upon. The product contribution wasn't the sale itself, but making the sale scalable."
+        "description": "I launched the WhatsApp Business API deployment without owning the channel's P&L. It taught me the importance of setting strong technical and workflow foundations for commercial teams to build upon. The product contribution wasn't the sale itself, but making the sale scalable."
       },
       {
         "title": "Timing is Strategic",

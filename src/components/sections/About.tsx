@@ -99,7 +99,7 @@ const AboutContent = () => {
 								{[
 									{
 										company: "Postscript (Remote)",
-										path: "Built AI-powered SMS optimization engine for 18,000+ Shopify merchants.",
+										path: "Owned post-launch direction and iteration of Infinity Testing for Shopify merchants, with analytics instrumentation across 18,000+ merchant accounts.",
 									},
 									{
 										company: "FORVIA HELLA",
@@ -111,7 +111,7 @@ const AboutContent = () => {
 									},
 									{
 										company: "C&A Brasil",
-										path: "Led mobile shopping and early WhatsApp commerce integration, establishing the channel as a retention lever.",
+										path: "Owned the Checkout & Payments vertical and launched one of Brazil's earliest enterprise WhatsApp Business API deployments, integrated with Salesforce Marketing Cloud.",
 									},
 								].map((item, i) => (
 									<motion.div
